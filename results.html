@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="UTF-8">
@@ -10,247 +9,262 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Latest Results - Sarkari Career India
-  </title>
+  <title>Latest Exam Results - Sarkari Career India</title>
 
   <link
     rel="stylesheet"
     href="style.css"
   >
 
-
   <style>
 
+    /* ================= RESULTS PAGE ================= */
+
     .results-page {
-
       width: min(100%, 1200px);
-
       margin: auto;
-
+      padding: 20px 15px;
       background: #f6f7fb;
-
-      padding: 15px;
-
     }
-
 
     .results-heading {
-
-      background: #073a83;
-
+      background: linear-gradient(135deg, #7c3aed, #4c1d95);
       color: white;
-
-      padding: 18px;
-
-      border-radius: 10px;
-
-      margin-bottom: 15px;
-
+      padding: 25px 20px;
+      border-radius: 12px;
+      margin-bottom: 18px;
     }
-
 
     .results-heading h1 {
-
       margin: 0;
-
       font-size: 28px;
-
     }
-
 
     .results-heading p {
-
-      margin: 7px 0 0;
-
-    }
-
-
-    .result-card {
-
-      background: white;
-
-      border: 1px solid #d9dee8;
-
-      border-radius: 10px;
-
-      margin-bottom: 15px;
-
-      overflow: hidden;
-
-      box-shadow: 0 2px 6px #0002;
-
-    }
-
-
-    .result-title {
-
-      background: #159b50;
-
-      color: white;
-
-      padding: 13px 15px;
-
-      font-size: 18px;
-
-      font-weight: bold;
-
-    }
-
-
-    .result-info {
-
-      padding: 15px;
-
-    }
-
-
-    .result-info p {
-
-      margin: 8px 0;
-
+      margin: 8px 0 0;
       font-size: 14px;
-
     }
 
-
-    .result-info strong {
-
-      color: #073a83;
-
-    }
-
-
-    .result-buttons {
-
-      display: flex;
-
-      gap: 8px;
-
-      flex-wrap: wrap;
-
-      margin-top: 12px;
-
-    }
-
-
-    .result-buttons a {
-
-      padding: 10px 15px;
-
-      border-radius: 6px;
-
-      color: white;
-
-      font-weight: bold;
-
-      font-size: 13px;
-
-      text-decoration: none;
-
-    }
-
-
-    .result-btn {
-
-      background: #159b50;
-
-    }
-
-
-    .notification-btn {
-
-      background: #073a83;
-
-    }
-
+    /* BACK BUTTON */
 
     .back-btn {
-
       display: inline-block;
-
       background: #ff7900;
-
       color: white;
-
-      padding: 10px 18px;
-
-      border-radius: 20px;
-
-      font-weight: bold;
-
-      margin-bottom: 15px;
-
       text-decoration: none;
-
-    }
-
-
-    .search-message {
-
-      display: none;
-
-      background: #fff7ed;
-
-      border: 1px solid #fed7aa;
-
-      color: #9a3412;
-
-      padding: 12px;
-
-      border-radius: 8px;
-
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: bold;
       margin-bottom: 15px;
-
-      font-size: 14px;
-
     }
 
+    .back-btn:hover {
+      background: #e56700;
+    }
+
+    /* NOTICE */
+
+    .results-notice {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* FILTER */
+
+    .results-filters {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #e1e5ec;
+      box-shadow: 0 3px 10px #0001;
+      margin-bottom: 18px;
+    }
+
+    .results-filters h3 {
+      color: #073a83;
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-row input,
+    .filter-row select {
+      flex: 1;
+      min-width: 200px;
+      padding: 11px;
+      border: 1px solid #d5d9e0;
+      border-radius: 7px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .filter-row input:focus,
+    .filter-row select:focus {
+      border-color: #073a83;
+    }
+
+    /* RESULT CARD */
+
+    .result-card {
+      background: white;
+      border: 1px solid #d9dee8;
+      border-left: 5px solid #7c3aed;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 7px #0002;
+    }
+
+    .result-title {
+      background: #073a83;
+      color: white;
+      padding: 13px 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .result-content {
+      padding: 15px;
+    }
+
+    .result-badge {
+      display: inline-block;
+      background: #ede9fe;
+      color: #5b21b6;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .result-info {
+      color: #444;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .result-info strong {
+      color: #073a83;
+    }
+
+    .result-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 13px;
+    }
+
+    .result-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .view-result-btn {
+      background: #10954e;
+    }
+
+    .view-result-btn:hover {
+      background: #087b3d;
+    }
+
+    .official-btn {
+      background: #073a83;
+    }
+
+    .official-btn:hover {
+      background: #052d67;
+    }
+
+    /* NO RESULT */
+
+    .no-result {
+      display: none;
+      background: white;
+      text-align: center;
+      padding: 30px 15px;
+      border-radius: 10px;
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .no-result h3 {
+      color: #073a83;
+      margin-bottom: 8px;
+    }
+
+    /* IMPORTANT INFO */
 
     .important-info {
-
       background: white;
-
-      padding: 15px;
-
-      margin-top: 15px;
-
+      padding: 18px;
       border-radius: 10px;
-
-      box-shadow: 0 2px 6px #0001;
-
+      border: 1px solid #d9dee8;
+      margin-top: 20px;
     }
-
 
     .important-info h2 {
-
       color: #073a83;
-
-      margin-top: 0;
-
+      font-size: 19px;
+      margin-bottom: 10px;
     }
 
+    .important-info p,
+    .important-info li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
 
-    @media(max-width:600px) {
+    .important-info ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
 
       .results-page {
-
-        padding: 10px;
-
+        padding: 12px 10px;
       }
-
 
       .results-heading h1 {
-
         font-size: 23px;
-
       }
 
+      .results-heading {
+        padding: 20px 15px;
+      }
+
+      .filter-row {
+        flex-direction: column;
+      }
+
+      .filter-row input,
+      .filter-row select {
+        width: 100%;
+        min-width: 100%;
+      }
 
       .result-title {
-
         font-size: 16px;
-
       }
 
     }
@@ -263,13 +277,59 @@
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+  <div class="brand">
+
+    <div class="logo-circle">
+
+      <div class="logo-main">
+        SCI
+      </div>
+
+      <div class="logo-small">
+        Sarkari Career India
+      </div>
+
+    </div>
+
+    <div>
+
+      <h1>
+        Sarkari
+        <span>Career</span>
+        <b>India</b>
+      </h1>
+
+      <p>
+        Government Jobs • Results • Exams • Career
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-art">
+
+    <div class="tricolor"></div>
+
+    <div class="person">
+      👨‍🎓
+    </div>
+
+  </div>
+
+</header>
+
+
 <!-- ================= NAVIGATION ================= -->
 
 <div class="nav-wrap">
 
-
   <div class="nav-main">
-
 
     <div class="mini-brand">
 
@@ -289,15 +349,34 @@
 
       <input
         type="text"
-        id="searchInput"
+        id="siteSearch"
         placeholder="Search Results..."
       >
 
-      <button
-        onclick="searchResults()"
-      >
+      <button onclick="siteSearch()">
         🔍
       </button>
+
+    </div>
+
+
+    <div class="socials">
+
+      <a href="#" title="Facebook">
+        f
+      </a>
+
+      <a href="#" title="Telegram">
+        ✈
+      </a>
+
+      <a href="#" title="WhatsApp">
+        ☘
+      </a>
+
+      <a href="#" title="Instagram">
+        ◎
+      </a>
 
     </div>
 
@@ -309,73 +388,54 @@
       ☰
     </button>
 
-
   </div>
 
 
   <nav id="navMenu">
 
-
     <a href="index.html">
       ⌂ Home
     </a>
 
-
     <a href="jobs.html">
-      💼 Latest Jobs
+      ▣ Latest Jobs
     </a>
-
 
     <a href="results.html">
       🏆 Results
     </a>
 
-
     <a href="admit-card.html">
       📨 Admit Card
     </a>
-
 
     <a href="answer-key.html">
       🔑 Answer Key
     </a>
 
-
     <a href="syllabus.html">
       📖 Syllabus
     </a>
-
 
     <a href="scholarship.html">
       🎓 Scholarship
     </a>
 
-
     <a href="bihar-jobs.html">
       📍 Bihar Jobs
     </a>
-
 
     <a href="central-jobs.html">
       🏛 Central Jobs
     </a>
 
-
-    <a href="exams.html">
-      📝 Exams
-    </a>
-
-
     <a href="contact.html">
       ☎ Contact
     </a>
 
-
   </nav>
 
-
 </div>
-
 
 
 <!-- ================= MAIN ================= -->
@@ -383,16 +443,17 @@
 <main class="results-page">
 
 
+  <!-- BACK -->
+
   <a
-    class="back-btn"
     href="index.html"
+    class="back-btn"
   >
-    ← Back to Home
+    ← Home
   </a>
 
 
-
-  <!-- PAGE HEADING -->
+  <!-- HEADING -->
 
   <section class="results-heading">
 
@@ -401,317 +462,365 @@
     </h1>
 
     <p>
-      Latest Government Exam Results, Merit Lists & Score Updates
+      Latest Government Exam Results, Scorecards & Result Updates
     </p>
 
   </section>
 
 
+  <!-- NOTICE -->
 
-  <!-- SEARCH MESSAGE -->
+  <div class="results-notice">
 
-  <div
-    id="searchMessage"
-    class="search-message"
-  >
+    ⚠️ <strong>Important:</strong>
+    नीचे दी गई result information अभी demo/sample है।
+    Final result publish करने से पहले संबंधित official examination
+    authority की website से verify करें।
+
   </div>
 
+
+  <!-- FILTER -->
+
+  <section class="results-filters">
+
+    <h3>
+      🔎 Search & Filter Results
+    </h3>
+
+    <div class="filter-row">
+
+      <input
+        type="text"
+        id="resultSearch"
+        placeholder="Search exam results..."
+        onkeyup="filterResults()"
+      >
+
+
+      <select
+        id="resultFilter"
+        onchange="filterResults()"
+      >
+
+        <option value="all">
+          All Categories
+        </option>
+
+        <option value="bihar">
+          📍 Bihar Government
+        </option>
+
+        <option value="central">
+          🏛 Central Government
+        </option>
+
+      </select>
+
+    </div>
+
+  </section>
 
 
   <!-- ================= RESULT 1 ================= -->
 
   <article
     class="result-card"
-    data-search="government examination latest result"
+    data-category="bihar"
   >
 
-
     <div class="result-title">
-
-      🏆 Latest Government Exam Result
-
+      📍 BPSC Examination Result
     </div>
 
+    <div class="result-content">
 
-    <div class="result-info">
+      <span class="result-badge">
+        Bihar Government
+      </span>
 
+      <div class="result-info">
 
-      <p>
-        <strong>
-          Exam Name:
-        </strong>
+        <strong>📍 Category:</strong>
+        Bihar
+        <br>
 
-        Government Examination
-      </p>
+        <strong>📝 Examination:</strong>
+        BPSC Examination
+        <br>
 
+        <strong>📅 Result Date:</strong>
+        To Be Updated
+        <br>
 
-      <p>
-        <strong>
-          Organization:
-        </strong>
-
-        Government Department
-      </p>
-
-
-      <p>
-        <strong>
-          Exam Date:
-        </strong>
-
-        Check Official Notification
-      </p>
-
-
-      <p>
-        <strong>
-          Result Date:
-        </strong>
-
-        Check Official Result
-      </p>
-
-
-      <p>
-        <strong>
-          Result Status:
-        </strong>
-
-        Declared / To be updated
-      </p>
-
-
-      <div class="result-buttons">
-
-
-        <a
-          href="#"
-          class="result-btn"
-        >
-          🏆 Check Result
-        </a>
-
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
+        <strong>📊 Result Status:</strong>
+        Check Official Website
 
       </div>
 
 
+      <div class="result-buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="result-btn view-result-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="https://www.bpsc.bih.nic.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="result-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
     </div>
 
-
   </article>
-
 
 
   <!-- ================= RESULT 2 ================= -->
 
   <article
     class="result-card"
-    data-search="new exam result recruitment examination"
+    data-category="central"
   >
 
-
     <div class="result-title">
-
-      🆕 New Exam Result Update
-
+      🏛 SSC Examination Result
     </div>
 
+    <div class="result-content">
 
-    <div class="result-info">
+      <span class="result-badge">
+        Central Government
+      </span>
 
+      <div class="result-info">
 
-      <p>
-        <strong>
-          Exam Name:
-        </strong>
+        <strong>📍 Category:</strong>
+        Central
+        <br>
 
-        Recruitment Examination
-      </p>
+        <strong>📝 Examination:</strong>
+        SSC Examination
+        <br>
 
+        <strong>📅 Result Date:</strong>
+        To Be Updated
+        <br>
 
-      <p>
-        <strong>
-          Organization:
-        </strong>
-
-        Government Organization
-      </p>
-
-
-      <p>
-        <strong>
-          Exam Date:
-        </strong>
-
-        Check Official Notification
-      </p>
-
-
-      <p>
-        <strong>
-          Result Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <p>
-        <strong>
-          Result Status:
-        </strong>
-
-        Result Update
-      </p>
-
-
-      <div class="result-buttons">
-
-
-        <a
-          href="#"
-          class="result-btn"
-        >
-          🏆 Check Result
-        </a>
-
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
+        <strong>📊 Result Status:</strong>
+        Check Official Website
 
       </div>
 
 
+      <div class="result-buttons">
+
+        <a
+          href="central-jobs.html"
+          class="result-btn view-result-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="https://ssc.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="result-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
     </div>
 
-
   </article>
-
 
 
   <!-- ================= RESULT 3 ================= -->
 
   <article
     class="result-card"
-    data-search="upcoming government recruitment result"
+    data-category="central"
   >
 
-
     <div class="result-title">
-
-      📢 Upcoming Result Update
-
+      🏛 UPSC Civil Services Result
     </div>
 
+    <div class="result-content">
 
-    <div class="result-info">
+      <span class="result-badge">
+        Central Government
+      </span>
 
+      <div class="result-info">
 
-      <p>
-        <strong>
-          Exam Name:
-        </strong>
+        <strong>📍 Category:</strong>
+        Central
+        <br>
 
-        Government Recruitment Exam
-      </p>
+        <strong>📝 Examination:</strong>
+        UPSC Civil Services Examination
+        <br>
 
+        <strong>📅 Result Date:</strong>
+        To Be Updated
+        <br>
 
-      <p>
-        <strong>
-          Organization:
-        </strong>
-
-        Government Organization
-      </p>
-
-
-      <p>
-        <strong>
-          Exam Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <p>
-        <strong>
-          Result Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <p>
-        <strong>
-          Result Status:
-        </strong>
-
-        Coming Soon
-      </p>
-
-
-      <div class="result-buttons">
-
-
-        <a
-          href="#"
-          class="result-btn"
-        >
-          🏆 Check Result
-        </a>
-
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
+        <strong>📊 Result Status:</strong>
+        Check Official Website
 
       </div>
 
 
-    </div>
+      <div class="result-buttons">
 
+        <a
+          href="central-jobs.html"
+          class="result-btn view-result-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="https://upsc.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="result-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
 
   </article>
 
 
+  <!-- ================= RESULT 4 ================= -->
 
-  <!-- ================= IMPORTANT INFORMATION ================= -->
+  <article
+    class="result-card"
+    data-category="bihar"
+  >
+
+    <div class="result-title">
+      👮 Bihar Police Examination Result
+    </div>
+
+    <div class="result-content">
+
+      <span class="result-badge">
+        Bihar Government
+      </span>
+
+      <div class="result-info">
+
+        <strong>📍 Category:</strong>
+        Bihar
+        <br>
+
+        <strong>📝 Examination:</strong>
+        Bihar Police Recruitment Examination
+        <br>
+
+        <strong>📅 Result Date:</strong>
+        To Be Updated
+        <br>
+
+        <strong>📊 Result Status:</strong>
+        Check Official Website
+
+      </div>
+
+
+      <div class="result-buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="result-btn view-result-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="https://csbc.bihar.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="result-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- NO RESULT -->
+
+  <div
+    id="noResult"
+    class="no-result"
+  >
+
+    <h3>
+      😔 No Result Found
+    </h3>
+
+    <p>
+      Please try another search keyword or category.
+    </p>
+
+  </div>
+
+
+  <!-- IMPORTANT INFO -->
 
   <section class="important-info">
-
 
     <h2>
       📌 Important Information
     </h2>
 
-
     <p>
-
-      Always verify examination results from the
-      official government website before relying
-      on any result information.
-
+      Sarkari Career India पर दी गई result information को
+      final मानने से पहले संबंधित official examination authority
+      की website पर जरूर verify करें।
     </p>
 
+    <ul>
+
+      <li>
+        Result date official website से verify करें।
+      </li>
+
+      <li>
+        Roll Number / Registration Number सही रखें।
+      </li>
+
+      <li>
+        Scorecard और result PDF official website से download करें।
+      </li>
+
+      <li>
+        किसी unknown website को personal information या OTP न दें।
+      </li>
+
+    </ul>
 
   </section>
 
@@ -719,11 +828,9 @@
 </main>
 
 
-
 <!-- ================= FOOTER ================= -->
 
-<footer>
-
+<footer id="contact">
 
   <div>
 
@@ -731,23 +838,21 @@
       SCI
     </span>
 
-
     <strong>
 
       Sarkari Career
+
       <span>
         India
       </span>
 
     </strong>
 
-
     <small>
       Government Jobs & Career Information
     </small>
 
   </div>
-
 
 
   <div>
@@ -758,13 +863,11 @@
 
     <br>
 
-
     <a href="index.html">
       Home
     </a>
 
     |
-
 
     <a href="jobs.html">
       Latest Jobs
@@ -772,29 +875,42 @@
 
     |
 
-
     <a href="results.html">
       Results
     </a>
 
     |
 
-
-    <a href="contact.html">
-      Contact
+    <a href="admit-card.html">
+      Admit Card
     </a>
 
   </div>
 
 
+  <div>
+
+    <strong>
+      Contact
+    </strong>
+
+    <br>
+
+    <a href="contact.html">
+      Contact Us
+    </a>
+
+  </div>
+
 </footer>
 
 
-
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ================= SCRIPT ================= -->
 
 <script>
 
+
+/* MOBILE MENU */
 
 function toggleMenu() {
 
@@ -806,89 +922,123 @@ function toggleMenu() {
 }
 
 
+/* RESULT SEARCH + FILTER */
 
-function searchResults() {
+function filterResults() {
 
-
-  let query =
+  let search =
     document
-      .getElementById("searchInput")
+      .getElementById("resultSearch")
       .value
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
+
+
+  let category =
+    document
+      .getElementById("resultFilter")
+      .value;
 
 
   let cards =
-    document.querySelectorAll(
-      ".result-card"
-    );
+    document.querySelectorAll(".result-card");
 
 
-  let message =
-    document.getElementById(
-      "searchMessage"
-    );
+  let visibleResults = 0;
+
+
+  cards.forEach(function(card) {
+
+    let text =
+      card.innerText.toLowerCase();
+
+    let cardCategory =
+      card.getAttribute("data-category");
+
+
+    let searchMatch =
+      text.includes(search);
+
+
+    let categoryMatch =
+      category === "all" ||
+      cardCategory === category;
+
+
+    if (
+      searchMatch &&
+      categoryMatch
+    ) {
+
+      card.style.display = "block";
+
+      visibleResults++;
+
+    }
+
+    else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  let noResult =
+    document.getElementById("noResult");
+
+
+  if (visibleResults === 0) {
+
+    noResult.style.display = "block";
+
+  }
+
+  else {
+
+    noResult.style.display = "none";
+
+  }
+
+}
+
+
+/* TOP SEARCH */
+
+function siteSearch() {
+
+  let query =
+    document
+      .getElementById("siteSearch")
+      .value
+      .trim();
 
 
   if (query === "") {
 
-
-    cards.forEach(function(card) {
-
-      card.style.display = "block";
-
-    });
-
-
-    message.style.display = "none";
+    alert(
+      "Please enter an exam name to search."
+    );
 
     return;
 
   }
 
 
-  let found = false;
+  document
+    .getElementById("resultSearch")
+    .value = query;
 
 
-  cards.forEach(function(card) {
+  filterResults();
 
 
-    let text =
-      card.innerText.toLowerCase();
-
-
-    if (
-      text.includes(query)
-    ) {
-
-      card.style.display = "block";
-
-      found = true;
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-
-  });
-
-
-  message.style.display = "block";
-
-
-  if (found) {
-
-    message.innerText =
-      "✅ Search results found.";
-
-  } else {
-
-    message.innerText =
-      "❌ No result found for: " + query;
-
-  }
+  document
+    .querySelector(".results-filters")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
 }
 
