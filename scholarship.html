@@ -6,190 +6,670 @@
 
   <title>Scholarship - Sarkari Career India</title>
 
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #f5f7fb;
-      color: #222;
-    }
-
-    .container {
-      max-width: 900px;
+    .scholarship-page {
+      width: min(100%, 1200px);
       margin: auto;
-      padding: 20px;
+      background: #f6f7fb;
+      padding: 15px;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-    }
-
-    .header {
-      background: linear-gradient(135deg, #f59e0b, #ea580c);
+    .scholarship-heading {
+      background: #073a83;
       color: white;
-      text-align: center;
-      padding: 30px 20px;
-      border-radius: 15px;
-      margin-bottom: 25px;
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
-    .header h1 {
+    .scholarship-heading h1 {
+      margin: 0;
       font-size: 28px;
-      margin-bottom: 8px;
     }
 
-    .header p {
-      font-size: 14px;
+    .scholarship-heading p {
+      margin: 7px 0 0;
     }
 
     .scholarship-card {
       background: white;
-      padding: 20px;
-      margin-bottom: 18px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      border-left: 5px solid #f59e0b;
+      border: 1px solid #d9dee8;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px #0002;
     }
 
-    .scholarship-card h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .info {
-      color: #555;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 9px 16px;
+    .scholarship-title {
       background: #f59e0b;
       color: white;
-      text-decoration: none;
-      border-radius: 8px;
+      padding: 13px 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .scholarship-info {
+      padding: 15px;
+    }
+
+    .scholarship-info p {
+      margin: 8px 0;
       font-size: 14px;
     }
 
-    .notice {
+    .scholarship-info strong {
+      color: #073a83;
+    }
+
+    .scholarship-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .scholarship-buttons a {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .details-btn {
+      background: #10954e;
+    }
+
+    .official-btn {
+      background: #073a83;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background: #ff7900;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 15px;
+    }
+
+    .notice-box {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
       color: #1e40af;
       padding: 15px;
       border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 13px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    .footer {
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-      margin-top: 30px;
+    .footer-links a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      .header h1 {
+    @media(max-width:600px) {
+
+      .scholarship-page {
+        padding: 10px;
+      }
+
+      .scholarship-heading h1 {
         font-size: 23px;
+      }
+
+      .scholarship-info p {
+        font-size: 13px;
+      }
+
+      .scholarship-title {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 
+
 <body>
 
-<div class="container">
 
-  <a href="index.html" class="back">
-    ← Home
-  </a>
+<!-- NAVIGATION -->
 
-  <div class="header">
-    <h1>🎓 Scholarships</h1>
-    <p>Scholarship information for students</p>
-  </div>
+<div class="nav-wrap">
 
-  <div class="notice">
-    ℹ️ Scholarship eligibility, dates and application details
-    should be verified from the official scholarship portal.
-  </div>
+  <div class="nav-main">
 
-
-  <!-- Bihar Scholarship -->
-
-  <div class="scholarship-card">
-
-    <h2>📍 Bihar Student Scholarship</h2>
-
-    <div class="info">
-      📍 State: Bihar<br>
-      🎓 Category: Student Scholarship<br>
-      📚 Eligibility: Check Official Notification<br>
-      📅 Last Date: To Be Updated
+    <div class="mini-brand">
+      <strong>SCI</strong>
+      <span>Sarkari <b>Career India</b></span>
     </div>
 
-    <a href="#" class="btn">
-      View Details →
-    </a>
 
-  </div>
+    <div class="search">
 
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Scholarship..."
+      >
 
-  <!-- Central Scholarship -->
+      <button onclick="searchSite()">
+        🔍
+      </button>
 
-  <div class="scholarship-card">
-
-    <h2>🇮🇳 Central Government Scholarships</h2>
-
-    <div class="info">
-      📍 Category: Central Government<br>
-      🎓 Category: Student Scholarship<br>
-      📚 Eligibility: Check Official Notification<br>
-      📅 Last Date: To Be Updated
     </div>
 
-    <a href="#" class="btn">
-      View Details →
+
+    <button
+      class="hamburger"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
+  </div>
+
+
+  <nav id="navMenu">
+
+    <a href="index.html">
+      ⌂ Home
     </a>
 
-  </div>
-
-
-  <!-- College Scholarship -->
-
-  <div class="scholarship-card">
-
-    <h2>🎓 Higher Education Scholarships</h2>
-
-    <div class="info">
-      🎓 Level: College / University<br>
-      📚 Eligibility: Check Official Notification<br>
-      📅 Last Date: To Be Updated
-    </div>
-
-    <a href="#" class="btn">
-      View Details →
+    <a href="jobs.html">
+      💼 Latest Jobs
     </a>
 
-  </div>
+    <a href="results.html">
+      🏆 Results
+    </a>
 
+    <a href="admit-card.html">
+      📨 Admit Card
+    </a>
 
-  <div class="footer">
-    © 2026 Sarkari Career India
-  </div>
+    <a href="answer-key.html">
+      🔑 Answer Key
+    </a>
+
+    <a href="syllabus.html">
+      📖 Syllabus
+    </a>
+
+    <a href="scholarship.html">
+      🎓 Scholarship
+    </a>
+
+    <a href="category.html?type=bihar">
+      📍 Bihar Jobs
+    </a>
+
+    <a href="category.html?type=central">
+      🏛 Central Jobs
+    </a>
+
+    <a href="index.html#contact">
+      ☎ Contact
+    </a>
+
+  </nav>
 
 </div>
+
+
+
+<!-- MAIN CONTENT -->
+
+<main class="scholarship-page">
+
+
+  <!-- BACK BUTTON -->
+
+  <a
+    class="back-btn"
+    href="index.html"
+  >
+    ← Back to Home
+  </a>
+
+
+
+  <!-- HEADING -->
+
+  <section class="scholarship-heading">
+
+    <h1>
+      🎓 Government Scholarships
+    </h1>
+
+    <p>
+      Scholarship Information, Eligibility, Dates & Application Updates
+    </p>
+
+  </section>
+
+
+
+  <!-- IMPORTANT NOTICE -->
+
+  <div class="notice-box">
+
+    <strong>ℹ️ Important:</strong>
+
+    Scholarship eligibility, application dates, required documents
+    and other details should always be verified from the official
+    scholarship portal or official notification before applying.
+
+  </div>
+
+
+
+  <!-- BIHAR SCHOLARSHIP -->
+
+  <article class="scholarship-card">
+
+    <div class="scholarship-title">
+
+      📍 Bihar Government Scholarships
+
+    </div>
+
+
+    <div class="scholarship-info">
+
+      <p>
+        <strong>State:</strong>
+        Bihar
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        Student Scholarship
+      </p>
+
+      <p>
+        <strong>Eligibility:</strong>
+        Check Official Notification
+      </p>
+
+      <p>
+        <strong>Application Status:</strong>
+        To Be Updated
+      </p>
+
+      <p>
+        <strong>Last Date:</strong>
+        To Be Updated
+      </p>
+
+
+      <div class="scholarship-buttons">
+
+        <a
+          href="#"
+          class="details-btn"
+        >
+          🎓 View Details
+        </a>
+
+        <a
+          href="#"
+          class="official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- CENTRAL SCHOLARSHIP -->
+
+  <article class="scholarship-card">
+
+    <div class="scholarship-title">
+
+      🇮🇳 Central Government Scholarships
+
+    </div>
+
+
+    <div class="scholarship-info">
+
+      <p>
+        <strong>Level:</strong>
+        National / Central Government
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        Student Scholarship
+      </p>
+
+      <p>
+        <strong>Eligibility:</strong>
+        Check Official Notification
+      </p>
+
+      <p>
+        <strong>Application Status:</strong>
+        To Be Updated
+      </p>
+
+      <p>
+        <strong>Last Date:</strong>
+        To Be Updated
+      </p>
+
+
+      <div class="scholarship-buttons">
+
+        <a
+          href="#"
+          class="details-btn"
+        >
+          🎓 View Details
+        </a>
+
+        <a
+          href="#"
+          class="official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- HIGHER EDUCATION -->
+
+  <article class="scholarship-card">
+
+    <div class="scholarship-title">
+
+      🎓 Higher Education Scholarships
+
+    </div>
+
+
+    <div class="scholarship-info">
+
+      <p>
+        <strong>Level:</strong>
+        College / University
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        Higher Education Scholarship
+      </p>
+
+      <p>
+        <strong>Eligibility:</strong>
+        Check Official Notification
+      </p>
+
+      <p>
+        <strong>Application Status:</strong>
+        To Be Updated
+      </p>
+
+      <p>
+        <strong>Last Date:</strong>
+        To Be Updated
+      </p>
+
+
+      <div class="scholarship-buttons">
+
+        <a
+          href="#"
+          class="details-btn"
+        >
+          🎓 View Details
+        </a>
+
+        <a
+          href="#"
+          class="official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- SCHOOL SCHOLARSHIP -->
+
+  <article class="scholarship-card">
+
+    <div class="scholarship-title">
+
+      📚 School Student Scholarships
+
+    </div>
+
+
+    <div class="scholarship-info">
+
+      <p>
+        <strong>Level:</strong>
+        School Students
+      </p>
+
+      <p>
+        <strong>Category:</strong>
+        Pre-Matric / Post-Matric Scholarships
+      </p>
+
+      <p>
+        <strong>Eligibility:</strong>
+        Check Official Notification
+      </p>
+
+      <p>
+        <strong>Application Status:</strong>
+        To Be Updated
+      </p>
+
+      <p>
+        <strong>Last Date:</strong>
+        To Be Updated
+      </p>
+
+
+      <div class="scholarship-buttons">
+
+        <a
+          href="#"
+          class="details-btn"
+        >
+          🎓 View Details
+        </a>
+
+        <a
+          href="#"
+          class="official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+
+  <!-- GENERAL INFORMATION -->
+
+  <section
+    class="panel"
+    style="padding:15px; margin-top:15px;"
+  >
+
+    <h2
+      style="color:#073a83; margin-top:0;"
+    >
+      📌 Important Information
+    </h2>
+
+
+    <p>
+      Before applying for any scholarship, carefully check the
+      eligibility criteria, income requirements, category requirements,
+      required documents, application dates and other conditions
+      mentioned in the official notification.
+    </p>
+
+
+    <br>
+
+
+    <p>
+      ⚠️ Do not submit personal or financial information on
+      unofficial websites. Always verify the scholarship information
+      from the concerned government authority.
+    </p>
+
+  </section>
+
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+  <div>
+
+    <span class="footer-logo">
+      SCI
+    </span>
+
+    <strong>
+      Sarkari Career <span>India</span>
+    </strong>
+
+    <small>
+      Government Jobs & Career Information
+    </small>
+
+  </div>
+
+
+  <div class="footer-links">
+
+    <strong>
+      Quick Links
+    </strong>
+
+    <br>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    |
+
+    <a href="jobs.html">
+      Latest Jobs
+    </a>
+
+    |
+
+    <a href="results.html">
+      Results
+    </a>
+
+    |
+
+    <a href="scholarship.html">
+      Scholarship
+    </a>
+
+  </div>
+
+
+  <div>
+
+    <strong>
+      Contact
+    </strong>
+
+    <br>
+
+    Email:
+    contact@sarkaricareerindia.com
+
+  </div>
+
+</footer>
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function toggleMenu() {
+
+  document
+    .getElementById("navMenu")
+    .classList.toggle("open");
+
+}
+
+
+function searchSite() {
+
+  let query =
+    document
+      .getElementById("searchInput")
+      .value
+      .trim();
+
+
+  if (query === "") {
+
+    alert("Please enter something to search.");
+
+    return;
+
+  }
+
+
+  alert("Searching for: " + query);
+
+}
+
+</script>
+
 
 </body>
 </html>
