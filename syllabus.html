@@ -2,38 +2,30 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <title>
-    Government Exam Syllabus - Sarkari Career India
-  </title>
+  <title>Sarkari Exam Syllabus - Sarkari Career India</title>
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="stylesheet" href="style.css">
 
   <style>
 
     .syllabus-page {
       width: min(100%, 1200px);
       margin: auto;
+      padding: 20px 15px;
       background: #f6f7fb;
-      padding: 15px;
     }
 
     .syllabus-heading {
-      background: #073a83;
+      background: linear-gradient(135deg, #2563eb, #1e3a8a);
       color: white;
-      padding: 18px;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      padding: 25px 20px;
+      border-radius: 12px;
+      margin-bottom: 18px;
     }
 
     .syllabus-heading h1 {
@@ -42,134 +34,220 @@
     }
 
     .syllabus-heading p {
-      margin: 7px 0 0;
-    }
-
-    .syllabus-card {
-      background: white;
-      border: 1px solid #d9dee8;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px #0002;
-    }
-
-    .syllabus-title {
-      background: #7137cf;
-      color: white;
-      padding: 13px 15px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .syllabus-info {
-      padding: 15px;
-    }
-
-    .syllabus-info p {
-      margin: 8px 0;
+      margin: 8px 0 0;
       font-size: 14px;
-    }
-
-    .syllabus-info strong {
-      color: #073a83;
-    }
-
-    .subject-list {
-      margin: 10px 0;
-      padding-left: 20px;
-      line-height: 1.8;
-      font-size: 14px;
-    }
-
-    .subject-list li::marker {
-      color: #ff7900;
-    }
-
-    .syllabus-buttons {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-
-    .syllabus-buttons a {
-      padding: 10px 15px;
-      border-radius: 6px;
-      color: white;
-      font-weight: bold;
-      font-size: 13px;
-      text-decoration: none;
-    }
-
-    .download-btn {
-      background: #10954e;
-    }
-
-    .notification-btn {
-      background: #073a83;
     }
 
     .back-btn {
       display: inline-block;
       background: #ff7900;
       color: white;
+      text-decoration: none;
       padding: 10px 18px;
       border-radius: 20px;
       font-weight: bold;
       margin-bottom: 15px;
-      text-decoration: none;
     }
 
-    .search-message {
-      display: none;
-      background: #fff7ed;
-      border: 1px solid #fed7aa;
-      color: #9a3412;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 15px;
+    .filters {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 10px #0001;
+    }
+
+    .filters h3 {
+      color: #073a83;
+      margin-bottom: 12px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-row input,
+    .filter-row select {
+      flex: 1;
+      min-width: 200px;
+      padding: 11px;
+      border: 1px solid #d5d9e0;
+      border-radius: 7px;
       font-size: 14px;
+    }
+
+    .syllabus-card {
+      background: white;
+      border: 1px solid #d9dee8;
+      border-left: 5px solid #2563eb;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 7px #0002;
+    }
+
+    .syllabus-title {
+      background: #073a83;
+      color: white;
+      padding: 13px 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .syllabus-content {
+      padding: 15px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .syllabus-info {
+      color: #444;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .syllabus-info strong {
+      color: #073a83;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 13px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .details-btn {
+      background: #10954e;
+    }
+
+    .official-btn {
+      background: #073a83;
+    }
+
+    .no-result {
+      display: none;
+      background: white;
+      text-align: center;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      color: #666;
     }
 
     .important-info {
       background: white;
-      padding: 15px;
-      margin-top: 15px;
+      padding: 18px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px #0001;
+      border: 1px solid #d9dee8;
+      margin-top: 20px;
     }
 
     .important-info h2 {
       color: #073a83;
-      margin-top: 0;
+      font-size: 19px;
+    }
+
+    .important-info p,
+    .important-info li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
     }
 
     @media(max-width:600px) {
 
       .syllabus-page {
-        padding: 10px;
+        padding: 12px 10px;
       }
 
       .syllabus-heading h1 {
         font-size: 23px;
       }
 
+      .filter-row {
+        flex-direction: column;
+      }
+
+      .filter-row input,
+      .filter-row select {
+        width: 100%;
+        min-width: 100%;
+      }
+
       .syllabus-title {
         font-size: 16px;
       }
-
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
-<!-- ================= NAVIGATION ================= -->
+<header class="top-header">
+
+  <div class="brand">
+
+    <div class="logo-circle">
+
+      <div class="logo-main">
+        SCI
+      </div>
+
+      <div class="logo-small">
+        Sarkari Career India
+      </div>
+
+    </div>
+
+    <div>
+
+      <h1>
+        Sarkari
+        <span>Career</span>
+        <b>India</b>
+      </h1>
+
+      <p>
+        Government Jobs • Results • Exams • Career
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="hero-art">
+    <div class="tricolor"></div>
+    <div class="person">👨‍🎓</div>
+  </div>
+
+</header>
+
 
 <div class="nav-wrap">
 
@@ -177,9 +255,7 @@
 
     <div class="mini-brand">
 
-      <strong>
-        SCI
-      </strong>
+      <strong>SCI</strong>
 
       <span>
         Sarkari <b>Career India</b>
@@ -192,21 +268,30 @@
 
       <input
         type="text"
-        id="searchInput"
+        id="siteSearch"
         placeholder="Search Syllabus..."
       >
 
-      <button onclick="searchSyllabus()">
+      <button onclick="siteSearch()">
         🔍
       </button>
 
     </div>
 
 
+    <div class="socials">
+
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="Telegram">✈</a>
+      <a href="#" title="WhatsApp">☘</a>
+      <a href="#" title="Instagram">◎</a>
+
+    </div>
+
+
     <button
       class="hamburger"
-      onclick="toggleMenu()"
-    >
+      onclick="toggleMenu()">
       ☰
     </button>
 
@@ -215,65 +300,27 @@
 
   <nav id="navMenu">
 
-    <a href="index.html">
-      ⌂ Home
-    </a>
-
-    <a href="jobs.html">
-      💼 Latest Jobs
-    </a>
-
-    <a href="results.html">
-      🏆 Results
-    </a>
-
-    <a href="admit-card.html">
-      📨 Admit Card
-    </a>
-
-    <a href="answer-key.html">
-      🔑 Answer Key
-    </a>
-
-    <a href="syllabus.html">
-      📖 Syllabus
-    </a>
-
-    <a href="scholarship.html">
-      🎓 Scholarship
-    </a>
-
-    <a href="bihar-jobs.html">
-      📍 Bihar Jobs
-    </a>
-
-    <a href="central-jobs.html">
-      🏛 Central Jobs
-    </a>
-
-    <a href="exams.html">
-      📝 Exams
-    </a>
-
-    <a href="contact.html">
-      ☎ Contact
-    </a>
+    <a href="index.html">⌂ Home</a>
+    <a href="jobs.html">💼 Latest Jobs</a>
+    <a href="results.html">🏆 Results</a>
+    <a href="admit-card.html">📨 Admit Card</a>
+    <a href="answer-key.html">🔑 Answer Key</a>
+    <a href="syllabus.html">📖 Syllabus</a>
+    <a href="scholarship.html">🎓 Scholarship</a>
+    <a href="bihar-jobs.html">📍 Bihar Jobs</a>
+    <a href="central-jobs.html">🏛 Central Jobs</a>
+    <a href="exams.html">📝 Exams</a>
+    <a href="contact.html">☎ Contact</a>
 
   </nav>
 
 </div>
 
 
-
-<!-- ================= MAIN ================= -->
-
 <main class="syllabus-page">
 
 
-  <a
-    class="back-btn"
-    href="index.html"
-  >
+  <a href="index.html" class="back-btn">
     ← Back to Home
   </a>
 
@@ -285,131 +332,222 @@
     </h1>
 
     <p>
-      Exam-wise Syllabus, Subjects & Important Topics
+      Latest Government Exam Syllabus, Pattern & Preparation Updates
     </p>
 
   </section>
 
 
-  <div
-    id="searchMessage"
-    class="search-message"
-  >
-  </div>
+  <section class="filters">
+
+    <h3>
+      🔎 Search & Filter Syllabus
+    </h3>
+
+    <div class="filter-row">
+
+      <input
+        type="text"
+        id="syllabusSearch"
+        placeholder="Search exam syllabus..."
+        onkeyup="filterSyllabus()"
+      >
+
+      <select
+        id="categoryFilter"
+        onchange="filterSyllabus()"
+      >
+
+        <option value="all">
+          All Categories
+        </option>
+
+        <option value="bihar">
+          📍 Bihar Government
+        </option>
+
+        <option value="central">
+          🏛 Central Government
+        </option>
+
+      </select>
+
+    </div>
+
+  </section>
 
 
-
-  <!-- ================= UPSC ================= -->
+  <!-- BPSC -->
 
   <article
     class="syllabus-card"
-    data-search="upsc civil services general studies current affairs polity history geography economy environment science csat"
+    data-category="bihar"
+  >
+
+    <div class="syllabus-title">
+      📍 BPSC Combined Competitive Examination
+    </div>
+
+    <div class="syllabus-content">
+
+      <span class="badge">
+        Bihar Government
+      </span>
+
+      <div class="syllabus-info">
+
+        <strong>Exam:</strong>
+        BPSC CCE
+        <br>
+
+        <strong>Level:</strong>
+        Bihar State Government
+        <br>
+
+        <strong>Subjects:</strong>
+        General Studies, Current Affairs,
+        History, Geography, Polity, Economy
+        <br>
+
+        <strong>Exam Pattern:</strong>
+        Check Latest Official Notification
+
+      </div>
+
+      <div class="buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="btn details-btn"
+        >
+          📚 View Details →
+        </a>
+
+        <a
+          href="https://www.bpsc.bih.nic.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- SSC -->
+
+  <article
+    class="syllabus-card"
+    data-category="central"
+  >
+
+    <div class="syllabus-title">
+      🏛 SSC CGL
+    </div>
+
+    <div class="syllabus-content">
+
+      <span class="badge">
+        Central Government
+      </span>
+
+      <div class="syllabus-info">
+
+        <strong>Exam:</strong>
+        SSC Combined Graduate Level
+        <br>
+
+        <strong>Subjects:</strong>
+        General Intelligence & Reasoning,
+        Quantitative Aptitude,
+        English, General Awareness
+        <br>
+
+        <strong>Level:</strong>
+        Central Government
+
+      </div>
+
+      <div class="buttons">
+
+        <a
+          href="central-jobs.html"
+          class="btn details-btn"
+        >
+          📚 View Details →
+        </a>
+
+        <a
+          href="https://ssc.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- UPSC -->
+
+  <article
+    class="syllabus-card"
+    data-category="central"
   >
 
     <div class="syllabus-title">
       🏛 UPSC Civil Services
     </div>
 
-    <div class="syllabus-info">
+    <div class="syllabus-content">
 
-      <p>
+      <span class="badge">
+        Central Government
+      </span>
+
+      <div class="syllabus-info">
+
         <strong>Exam:</strong>
         UPSC Civil Services Examination
-      </p>
+        <br>
 
-      <p>
         <strong>Stages:</strong>
-        Preliminary Examination, Main Examination & Interview
-      </p>
+        Preliminary Examination,
+        Main Examination & Interview
+        <br>
 
-      <ul class="subject-list">
-
-        <li>General Studies</li>
-        <li>Current Affairs</li>
-        <li>Indian Polity</li>
-        <li>History & Geography</li>
-        <li>Economy</li>
-        <li>Environment & Ecology</li>
-        <li>Science & Technology</li>
-        <li>CSAT</li>
-
-      </ul>
-
-
-      <div class="syllabus-buttons">
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📖 Download Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-
-  <!-- ================= BPSC ================= -->
-
-  <article
-    class="syllabus-card"
-    data-search="bpsc bihar public service commission general studies history geography polity economy science current affairs bihar"
-  >
-
-    <div class="syllabus-title">
-      📍 BPSC
-    </div>
-
-    <div class="syllabus-info">
-
-      <p>
-        <strong>Exam:</strong>
-        Bihar Public Service Commission
-      </p>
-
-      <p>
         <strong>Subjects:</strong>
-      </p>
+        General Studies, CSAT,
+        Essay and Optional Subject
 
-      <ul class="subject-list">
+      </div>
 
-        <li>General Studies</li>
-        <li>History</li>
-        <li>Geography</li>
-        <li>Indian Polity</li>
-        <li>Economy</li>
-        <li>General Science</li>
-        <li>Current Affairs</li>
-        <li>Bihar-specific topics</li>
-
-      </ul>
-
-
-      <div class="syllabus-buttons">
+      <div class="buttons">
 
         <a
-          href="#"
-          class="download-btn"
+          href="central-jobs.html"
+          class="btn details-btn"
         >
-          📖 Download Syllabus
+          📚 View Details →
         </a>
 
         <a
-          href="#"
-          class="notification-btn"
+          href="https://upsc.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn official-btn"
         >
-          📄 Official Notification
+          🌐 Official Website
         </a>
 
       </div>
@@ -419,50 +557,56 @@
   </article>
 
 
-
-  <!-- ================= SSC ================= -->
+  <!-- Bihar Police -->
 
   <article
     class="syllabus-card"
-    data-search="ssc staff selection commission reasoning quantitative aptitude english general awareness computer"
+    data-category="bihar"
   >
 
     <div class="syllabus-title">
-      📝 SSC
+      👮 Bihar Police Recruitment
     </div>
 
-    <div class="syllabus-info">
+    <div class="syllabus-content">
 
-      <p>
+      <span class="badge">
+        Bihar Government
+      </span>
+
+      <div class="syllabus-info">
+
         <strong>Exam:</strong>
-        Staff Selection Commission Exams
-      </p>
+        Bihar Police Recruitment Examination
+        <br>
 
-      <ul class="subject-list">
+        <strong>Subjects:</strong>
+        General Knowledge,
+        Current Affairs,
+        Reasoning and other subjects
+        <br>
 
-        <li>General Intelligence & Reasoning</li>
-        <li>Quantitative Aptitude</li>
-        <li>English Language</li>
-        <li>General Awareness</li>
-        <li>Computer Knowledge where applicable</li>
+        <strong>Exam Pattern:</strong>
+        Check Latest Official Notification
 
-      </ul>
+      </div>
 
-
-      <div class="syllabus-buttons">
+      <div class="buttons">
 
         <a
-          href="#"
-          class="download-btn"
+          href="bihar-jobs.html"
+          class="btn details-btn"
         >
-          📖 Download Syllabus
+          📚 View Details →
         </a>
 
         <a
-          href="#"
-          class="notification-btn"
+          href="https://csbc.bihar.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn official-btn"
         >
-          📄 Official Notification
+          🌐 Official Website
         </a>
 
       </div>
@@ -472,222 +616,21 @@
   </article>
 
 
-
-  <!-- ================= RAILWAY ================= -->
-
-  <article
-    class="syllabus-card"
-    data-search="railway railway exams mathematics reasoning general awareness science current affairs"
+  <div
+    id="noResult"
+    class="no-result"
   >
 
-    <div class="syllabus-title">
-      🚆 Railway Exams
-    </div>
+    <h3>
+      😔 No Syllabus Found
+    </h3>
 
-    <div class="syllabus-info">
+    <p>
+      Please try another exam name or category.
+    </p>
 
-      <p>
-        <strong>Exam:</strong>
-        Railway Recruitment Examinations
-      </p>
+  </div>
 
-      <ul class="subject-list">
-
-        <li>Mathematics</li>
-        <li>General Intelligence & Reasoning</li>
-        <li>General Awareness</li>
-        <li>General Science</li>
-        <li>Current Affairs</li>
-
-      </ul>
-
-
-      <div class="syllabus-buttons">
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📖 Download Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-
-  <!-- ================= BANKING ================= -->
-
-  <article
-    class="syllabus-card"
-    data-search="banking bank reasoning quantitative aptitude english general awareness banking awareness computer"
-  >
-
-    <div class="syllabus-title">
-      🏦 Banking Exams
-    </div>
-
-    <div class="syllabus-info">
-
-      <p>
-        <strong>Exam:</strong>
-        Banking Recruitment Examinations
-      </p>
-
-      <ul class="subject-list">
-
-        <li>Reasoning Ability</li>
-        <li>Quantitative Aptitude</li>
-        <li>English Language</li>
-        <li>General Awareness</li>
-        <li>Banking Awareness</li>
-        <li>Computer Knowledge where applicable</li>
-
-      </ul>
-
-
-      <div class="syllabus-buttons">
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📖 Download Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-
-  <!-- ================= TEACHING ================= -->
-
-  <article
-    class="syllabus-card"
-    data-search="teaching teacher eligibility recruitment child development pedagogy language mathematics environmental studies"
-  >
-
-    <div class="syllabus-title">
-      📚 Teaching Exams
-    </div>
-
-    <div class="syllabus-info">
-
-      <p>
-        <strong>Exam:</strong>
-        Teaching Recruitment & Eligibility Exams
-      </p>
-
-      <ul class="subject-list">
-
-        <li>Child Development & Pedagogy</li>
-        <li>Language</li>
-        <li>Mathematics</li>
-        <li>Environmental Studies</li>
-        <li>Subject-specific topics</li>
-
-      </ul>
-
-
-      <div class="syllabus-buttons">
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📖 Download Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-
-  <!-- ================= POLICE ================= -->
-
-  <article
-    class="syllabus-card"
-    data-search="police police recruitment general knowledge current affairs reasoning numerical ability science state"
-  >
-
-    <div class="syllabus-title">
-      👮 Police Exams
-    </div>
-
-    <div class="syllabus-info">
-
-      <p>
-        <strong>Exam:</strong>
-        Police Recruitment Examinations
-      </p>
-
-      <ul class="subject-list">
-
-        <li>General Knowledge</li>
-        <li>Current Affairs</li>
-        <li>Reasoning</li>
-        <li>Numerical Ability</li>
-        <li>General Science</li>
-        <li>State-specific General Knowledge</li>
-
-      </ul>
-
-
-      <div class="syllabus-buttons">
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📖 Download Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-
-  <!-- ================= IMPORTANT INFORMATION ================= -->
 
   <section class="important-info">
 
@@ -696,13 +639,30 @@
     </h2>
 
     <p>
-
-      Syllabus can vary by examination and recruitment
-      year. Always verify the latest syllabus and exam
-      pattern from the official examination authority's
-      notification.
-
+      Syllabus और exam pattern recruitment के अनुसार बदल सकता है।
+      तैयारी शुरू करने से पहले संबंधित official notification
+      जरूर check करें।
     </p>
+
+    <ul>
+
+      <li>
+        Latest official notification जरूर पढ़ें।
+      </li>
+
+      <li>
+        Exam pattern और marking scheme verify करें।
+      </li>
+
+      <li>
+        Previous year question papers भी practice करें।
+      </li>
+
+      <li>
+        केवल official sources पर भरोसा करें।
+      </li>
+
+    </ul>
 
   </section>
 
@@ -710,10 +670,7 @@
 </main>
 
 
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
+<footer id="contact">
 
   <div>
 
@@ -741,38 +698,17 @@
 
     <br>
 
-    <a href="index.html">
-      Home
-    </a>
-
-    |
-
-    <a href="jobs.html">
-      Latest Jobs
-    </a>
-
-    |
-
-    <a href="results.html">
-      Results
-    </a>
-
-    |
-
-    <a href="contact.html">
-      Contact
-    </a>
+    <a href="index.html">Home</a> |
+    <a href="jobs.html">Latest Jobs</a> |
+    <a href="results.html">Results</a> |
+    <a href="contact.html">Contact</a>
 
   </div>
 
 </footer>
 
 
-
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
-
 
 function toggleMenu() {
 
@@ -784,58 +720,44 @@ function toggleMenu() {
 }
 
 
+function filterSyllabus() {
 
-function searchSyllabus() {
-
-  let query =
+  let search =
     document
-      .getElementById("searchInput")
+      .getElementById("syllabusSearch")
       .value
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
 
+  let category =
+    document
+      .getElementById("categoryFilter")
+      .value;
 
   let cards =
-    document.querySelectorAll(
-      ".syllabus-card"
-    );
+    document.querySelectorAll(".syllabus-card");
 
-
-  let message =
-    document.getElementById(
-      "searchMessage"
-    );
-
-
-  if (query === "") {
-
-    cards.forEach(function(card) {
-
-      card.style.display = "block";
-
-    });
-
-    message.style.display = "none";
-
-    return;
-
-  }
-
-
-  let found = false;
-
+  let visible = 0;
 
   cards.forEach(function(card) {
 
     let text =
       card.innerText.toLowerCase();
 
+    let cardCategory =
+      card.getAttribute("data-category");
 
-    if (text.includes(query)) {
+    let searchMatch =
+      text.includes(search);
+
+    let categoryMatch =
+      category === "all" ||
+      cardCategory === category;
+
+    if (searchMatch && categoryMatch) {
 
       card.style.display = "block";
-
-      found = true;
+      visible++;
 
     } else {
 
@@ -845,21 +767,42 @@ function searchSyllabus() {
 
   });
 
+  let noResult =
+    document.getElementById("noResult");
 
-  message.style.display = "block";
+  noResult.style.display =
+    visible === 0 ? "block" : "none";
+
+}
 
 
-  if (found) {
+function siteSearch() {
 
-    message.innerText =
-      "✅ Syllabus found.";
+  let query =
+    document
+      .getElementById("siteSearch")
+      .value
+      .trim();
 
-  } else {
+  if (query === "") {
 
-    message.innerText =
-      "❌ No syllabus found for: " + query;
+    alert("Please enter an exam name to search.");
+
+    return;
 
   }
+
+  document
+    .getElementById("syllabusSearch")
+    .value = query;
+
+  filterSyllabus();
+
+  document
+    .querySelector(".filters")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
 }
 
@@ -867,5 +810,4 @@ function searchSyllabus() {
 
 
 </body>
-
 </html>
