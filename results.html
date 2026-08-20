@@ -1,306 +1,900 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Latest Results - Sarkari Career India</title>
-  <link rel="stylesheet" href="style.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Latest Results - Sarkari Career India
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 
   <style>
+
     .results-page {
+
       width: min(100%, 1200px);
+
       margin: auto;
+
       background: #f6f7fb;
+
       padding: 15px;
+
     }
+
 
     .results-heading {
+
       background: #073a83;
+
       color: white;
+
       padding: 18px;
+
       border-radius: 10px;
+
       margin-bottom: 15px;
+
     }
+
 
     .results-heading h1 {
+
       margin: 0;
+
       font-size: 28px;
+
     }
+
 
     .results-heading p {
+
       margin: 7px 0 0;
+
     }
+
 
     .result-card {
+
       background: white;
+
       border: 1px solid #d9dee8;
+
       border-radius: 10px;
+
       margin-bottom: 15px;
+
       overflow: hidden;
+
       box-shadow: 0 2px 6px #0002;
+
     }
+
 
     .result-title {
+
       background: #159b50;
+
       color: white;
+
       padding: 13px 15px;
+
       font-size: 18px;
+
       font-weight: bold;
+
     }
+
 
     .result-info {
+
       padding: 15px;
+
     }
+
 
     .result-info p {
+
       margin: 8px 0;
+
       font-size: 14px;
+
     }
+
 
     .result-info strong {
+
       color: #073a83;
+
     }
+
 
     .result-buttons {
+
       display: flex;
+
       gap: 8px;
+
       flex-wrap: wrap;
+
       margin-top: 12px;
+
     }
+
 
     .result-buttons a {
+
       padding: 10px 15px;
+
       border-radius: 6px;
+
       color: white;
+
       font-weight: bold;
+
       font-size: 13px;
+
+      text-decoration: none;
+
     }
+
 
     .result-btn {
+
       background: #159b50;
+
     }
+
 
     .notification-btn {
+
       background: #073a83;
+
     }
+
 
     .back-btn {
+
       display: inline-block;
+
       background: #ff7900;
+
       color: white;
+
       padding: 10px 18px;
+
       border-radius: 20px;
+
       font-weight: bold;
+
       margin-bottom: 15px;
+
+      text-decoration: none;
+
     }
+
+
+    .search-message {
+
+      display: none;
+
+      background: #fff7ed;
+
+      border: 1px solid #fed7aa;
+
+      color: #9a3412;
+
+      padding: 12px;
+
+      border-radius: 8px;
+
+      margin-bottom: 15px;
+
+      font-size: 14px;
+
+    }
+
+
+    .important-info {
+
+      background: white;
+
+      padding: 15px;
+
+      margin-top: 15px;
+
+      border-radius: 10px;
+
+      box-shadow: 0 2px 6px #0001;
+
+    }
+
+
+    .important-info h2 {
+
+      color: #073a83;
+
+      margin-top: 0;
+
+    }
+
 
     @media(max-width:600px) {
+
       .results-page {
+
         padding: 10px;
+
       }
 
+
       .results-heading h1 {
+
         font-size: 23px;
+
       }
+
+
+      .result-title {
+
+        font-size: 16px;
+
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ================= NAVIGATION ================= -->
+
 <div class="nav-wrap">
+
 
   <div class="nav-main">
 
+
     <div class="mini-brand">
-      <strong>SCI</strong>
-      <span>Sarkari <b>Career India</b></span>
+
+      <strong>
+        SCI
+      </strong>
+
+      <span>
+        Sarkari
+        <b>Career India</b>
+      </span>
+
     </div>
+
 
     <div class="search">
-      <input type="text" placeholder="Search Results...">
-      <button>🔍</button>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Results..."
+      >
+
+      <button
+        onclick="searchResults()"
+      >
+        🔍
+      </button>
+
     </div>
 
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <button
+      class="hamburger"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
 
   </div>
 
+
   <nav id="navMenu">
-    <a href="index.html">⌂ Home</a>
-    <a href="jobs.html">💼 Latest Jobs</a>
-    <a href="results.html">🏆 Results</a>
-    <a href="admit-card.html">📨 Admit Card</a>
-    <a href="answer-key.html">🔑 Answer Key</a>
-    <a href="syllabus.html">📖 Syllabus</a>
-    <a href="category.html?type=bihar">📍 Bihar Jobs</a>
-    <a href="category.html?type=central">🏛 Central Jobs</a>
-    <a href="index.html#contact">☎ Contact</a>
+
+
+    <a href="index.html">
+      ⌂ Home
+    </a>
+
+
+    <a href="jobs.html">
+      💼 Latest Jobs
+    </a>
+
+
+    <a href="results.html">
+      🏆 Results
+    </a>
+
+
+    <a href="admit-card.html">
+      📨 Admit Card
+    </a>
+
+
+    <a href="answer-key.html">
+      🔑 Answer Key
+    </a>
+
+
+    <a href="syllabus.html">
+      📖 Syllabus
+    </a>
+
+
+    <a href="scholarship.html">
+      🎓 Scholarship
+    </a>
+
+
+    <a href="bihar-jobs.html">
+      📍 Bihar Jobs
+    </a>
+
+
+    <a href="central-jobs.html">
+      🏛 Central Jobs
+    </a>
+
+
+    <a href="exams.html">
+      📝 Exams
+    </a>
+
+
+    <a href="contact.html">
+      ☎ Contact
+    </a>
+
+
   </nav>
+
 
 </div>
 
 
+
+<!-- ================= MAIN ================= -->
+
 <main class="results-page">
 
-  <a class="back-btn" href="index.html">← Back to Home</a>
+
+  <a
+    class="back-btn"
+    href="index.html"
+  >
+    ← Back to Home
+  </a>
+
+
+
+  <!-- PAGE HEADING -->
 
   <section class="results-heading">
-    <h1>🏆 Latest Exam Results</h1>
-    <p>Latest Government Exam Results, Merit Lists & Score Updates</p>
-  </section>
 
-
-  <!-- RESULT 1 -->
-  <article class="result-card">
-
-    <div class="result-title">
-      🏆 Latest Government Exam Result
-    </div>
-
-    <div class="result-info">
-
-      <p><strong>Exam Name:</strong> Government Examination</p>
-
-      <p><strong>Organization:</strong> Government Department</p>
-
-      <p><strong>Exam Date:</strong> Check Official Notification</p>
-
-      <p><strong>Result Date:</strong> Check Official Result</p>
-
-      <p><strong>Result Status:</strong> Declared / To be updated</p>
-
-      <div class="result-buttons">
-
-        <a href="#" class="result-btn">
-          🏆 Check Result
-        </a>
-
-        <a href="#" class="notification-btn">
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- RESULT 2 -->
-  <article class="result-card">
-
-    <div class="result-title">
-      🆕 New Exam Result Update
-    </div>
-
-    <div class="result-info">
-
-      <p><strong>Exam Name:</strong> Recruitment Examination</p>
-
-      <p><strong>Organization:</strong> Government Organization</p>
-
-      <p><strong>Exam Date:</strong> Check Official Notification</p>
-
-      <p><strong>Result Date:</strong> To be updated</p>
-
-      <p><strong>Result Status:</strong> Result Update</p>
-
-      <div class="result-buttons">
-
-        <a href="#" class="result-btn">
-          🏆 Check Result
-        </a>
-
-        <a href="#" class="notification-btn">
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- RESULT 3 -->
-  <article class="result-card">
-
-    <div class="result-title">
-      📢 Upcoming Result Update
-    </div>
-
-    <div class="result-info">
-
-      <p><strong>Exam Name:</strong> Government Recruitment Exam</p>
-
-      <p><strong>Organization:</strong> Government Organization</p>
-
-      <p><strong>Exam Date:</strong> To be updated</p>
-
-      <p><strong>Result Date:</strong> To be updated</p>
-
-      <p><strong>Result Status:</strong> Coming Soon</p>
-
-      <div class="result-buttons">
-
-        <a href="#" class="result-btn">
-          🏆 Check Result
-        </a>
-
-        <a href="#" class="notification-btn">
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <section class="panel" style="padding:15px; margin-top:15px;">
-
-    <h2 style="color:#073a83; margin-top:0;">
-      📌 Important Information
-    </h2>
+    <h1>
+      🏆 Latest Exam Results
+    </h1>
 
     <p>
-      Always verify examination results from the official government
-      website before relying on any result information.
+      Latest Government Exam Results, Merit Lists & Score Updates
     </p>
 
   </section>
 
+
+
+  <!-- SEARCH MESSAGE -->
+
+  <div
+    id="searchMessage"
+    class="search-message"
+  >
+  </div>
+
+
+
+  <!-- ================= RESULT 1 ================= -->
+
+  <article
+    class="result-card"
+    data-search="government examination latest result"
+  >
+
+
+    <div class="result-title">
+
+      🏆 Latest Government Exam Result
+
+    </div>
+
+
+    <div class="result-info">
+
+
+      <p>
+        <strong>
+          Exam Name:
+        </strong>
+
+        Government Examination
+      </p>
+
+
+      <p>
+        <strong>
+          Organization:
+        </strong>
+
+        Government Department
+      </p>
+
+
+      <p>
+        <strong>
+          Exam Date:
+        </strong>
+
+        Check Official Notification
+      </p>
+
+
+      <p>
+        <strong>
+          Result Date:
+        </strong>
+
+        Check Official Result
+      </p>
+
+
+      <p>
+        <strong>
+          Result Status:
+        </strong>
+
+        Declared / To be updated
+      </p>
+
+
+      <div class="result-buttons">
+
+
+        <a
+          href="#"
+          class="result-btn"
+        >
+          🏆 Check Result
+        </a>
+
+
+        <a
+          href="#"
+          class="notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </article>
+
+
+
+  <!-- ================= RESULT 2 ================= -->
+
+  <article
+    class="result-card"
+    data-search="new exam result recruitment examination"
+  >
+
+
+    <div class="result-title">
+
+      🆕 New Exam Result Update
+
+    </div>
+
+
+    <div class="result-info">
+
+
+      <p>
+        <strong>
+          Exam Name:
+        </strong>
+
+        Recruitment Examination
+      </p>
+
+
+      <p>
+        <strong>
+          Organization:
+        </strong>
+
+        Government Organization
+      </p>
+
+
+      <p>
+        <strong>
+          Exam Date:
+        </strong>
+
+        Check Official Notification
+      </p>
+
+
+      <p>
+        <strong>
+          Result Date:
+        </strong>
+
+        To be updated
+      </p>
+
+
+      <p>
+        <strong>
+          Result Status:
+        </strong>
+
+        Result Update
+      </p>
+
+
+      <div class="result-buttons">
+
+
+        <a
+          href="#"
+          class="result-btn"
+        >
+          🏆 Check Result
+        </a>
+
+
+        <a
+          href="#"
+          class="notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </article>
+
+
+
+  <!-- ================= RESULT 3 ================= -->
+
+  <article
+    class="result-card"
+    data-search="upcoming government recruitment result"
+  >
+
+
+    <div class="result-title">
+
+      📢 Upcoming Result Update
+
+    </div>
+
+
+    <div class="result-info">
+
+
+      <p>
+        <strong>
+          Exam Name:
+        </strong>
+
+        Government Recruitment Exam
+      </p>
+
+
+      <p>
+        <strong>
+          Organization:
+        </strong>
+
+        Government Organization
+      </p>
+
+
+      <p>
+        <strong>
+          Exam Date:
+        </strong>
+
+        To be updated
+      </p>
+
+
+      <p>
+        <strong>
+          Result Date:
+        </strong>
+
+        To be updated
+      </p>
+
+
+      <p>
+        <strong>
+          Result Status:
+        </strong>
+
+        Coming Soon
+      </p>
+
+
+      <div class="result-buttons">
+
+
+        <a
+          href="#"
+          class="result-btn"
+        >
+          🏆 Check Result
+        </a>
+
+
+        <a
+          href="#"
+          class="notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </article>
+
+
+
+  <!-- ================= IMPORTANT INFORMATION ================= -->
+
+  <section class="important-info">
+
+
+    <h2>
+      📌 Important Information
+    </h2>
+
+
+    <p>
+
+      Always verify examination results from the
+      official government website before relying
+      on any result information.
+
+    </p>
+
+
+  </section>
+
+
 </main>
 
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-  <div>
-    <span class="footer-logo">SCI</span>
-    <strong>Sarkari Career <span>India</span></strong>
-    <small>Government Jobs & Career Information</small>
-  </div>
 
   <div>
-    <strong>Quick Links</strong>
-    <br>
-    <a href="index.html">Home</a> |
-    <a href="jobs.html">Latest Jobs</a> |
-    <a href="results.html">Results</a>
+
+    <span class="footer-logo">
+      SCI
+    </span>
+
+
+    <strong>
+
+      Sarkari Career
+      <span>
+        India
+      </span>
+
+    </strong>
+
+
+    <small>
+      Government Jobs & Career Information
+    </small>
+
   </div>
+
+
+
+  <div>
+
+    <strong>
+      Quick Links
+    </strong>
+
+    <br>
+
+
+    <a href="index.html">
+      Home
+    </a>
+
+    |
+
+
+    <a href="jobs.html">
+      Latest Jobs
+    </a>
+
+    |
+
+
+    <a href="results.html">
+      Results
+    </a>
+
+    |
+
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+  </div>
+
 
 </footer>
 
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
+
 function toggleMenu() {
-  document.getElementById("navMenu").classList.toggle("open");
+
+  document
+    .getElementById("navMenu")
+    .classList
+    .toggle("open");
+
+}
+
+
+
+function searchResults() {
+
+
+  let query =
+    document
+      .getElementById("searchInput")
+      .value
+      .trim()
+      .toLowerCase();
+
+
+  let cards =
+    document.querySelectorAll(
+      ".result-card"
+    );
+
+
+  let message =
+    document.getElementById(
+      "searchMessage"
+    );
+
+
+  if (query === "") {
+
+
+    cards.forEach(function(card) {
+
+      card.style.display = "block";
+
+    });
+
+
+    message.style.display = "none";
+
+    return;
+
+  }
+
+
+  let found = false;
+
+
+  cards.forEach(function(card) {
+
+
+    let text =
+      card.innerText.toLowerCase();
+
+
+    if (
+      text.includes(query)
+    ) {
+
+      card.style.display = "block";
+
+      found = true;
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+
+  });
+
+
+  message.style.display = "block";
+
+
+  if (found) {
+
+    message.innerText =
+      "✅ Search results found.";
+
+  } else {
+
+    message.innerText =
+      "❌ No result found for: " + query;
+
+  }
+
 }
 
 </script>
 
+
 </body>
-      </html>
+
+</html>
