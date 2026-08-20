@@ -1,361 +1,912 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Latest Government Jobs - Sarkari Career India</title>
 
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
 
-    body {
-      background: #f5f7fb;
-      color: #222;
-    }
+    /* ================= JOBS PAGE ================= */
 
-    .container {
-      max-width: 950px;
+    .jobs-page {
+      width: min(100%, 1200px);
       margin: auto;
-      padding: 20px;
+      padding: 20px 15px;
+      background: #f6f7fb;
     }
 
-    .back {
-      display: inline-block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-    }
-
-    .header {
+    .jobs-heading {
       background: linear-gradient(135deg, #dc2626, #b91c1c);
       color: white;
-      padding: 30px 20px;
-      border-radius: 15px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .header h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .header p {
-      font-size: 14px;
-    }
-
-    .filters {
-      background: white;
-      padding: 15px;
+      padding: 25px 20px;
       border-radius: 12px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-      margin-bottom: 20px;
-    }
-
-    .filters input,
-    .filters select {
-      width: 100%;
-      padding: 11px;
-      margin-bottom: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-
-    .job-card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
       margin-bottom: 18px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      border-left: 5px solid #dc2626;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 20px;
-      background: #fee2e2;
-      color: #991b1b;
-      font-size: 12px;
-      margin-bottom: 10px;
+    .jobs-heading h1 {
+      margin: 0;
+      font-size: 28px;
     }
 
-    .job-card h2 {
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
-
-    .job-info {
-      color: #555;
+    .jobs-heading p {
+      margin: 8px 0 0;
       font-size: 14px;
-      line-height: 1.8;
     }
 
-    .details-btn {
+    /* BACK BUTTON */
+
+    .back-btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background: #dc2626;
+      background: #ff7900;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 14px;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
     }
 
-    .details-btn:hover {
-      background: #b91c1c;
+    .back-btn:hover {
+      background: #e56700;
     }
 
-    .notice {
+    /* NOTICE */
+
+    .jobs-notice {
       background: #fff7ed;
       border: 1px solid #fed7aa;
       color: #9a3412;
       padding: 14px;
       border-radius: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       font-size: 13px;
+      line-height: 1.6;
     }
 
-    .footer {
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-      margin-top: 30px;
+    /* FILTER */
+
+    .jobs-filters {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #e1e5ec;
+      box-shadow: 0 3px 10px #0001;
+      margin-bottom: 18px;
     }
+
+    .jobs-filters h3 {
+      color: #073a83;
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-row input,
+    .filter-row select {
+      flex: 1;
+      min-width: 200px;
+      padding: 11px;
+      border: 1px solid #d5d9e0;
+      border-radius: 7px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .filter-row input:focus,
+    .filter-row select:focus {
+      border-color: #073a83;
+    }
+
+    /* JOB CARD */
+
+    .job-card {
+      background: white;
+      border: 1px solid #d9dee8;
+      border-left: 5px solid #dc2626;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 7px #0002;
+    }
+
+    .job-title {
+      background: #073a83;
+      color: white;
+      padding: 13px 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .job-content {
+      padding: 15px;
+    }
+
+    .job-badge {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .job-info {
+      color: #444;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .job-info strong {
+      color: #073a83;
+    }
+
+    .job-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 13px;
+    }
+
+    .job-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .details-btn {
+      background: #10954e;
+    }
+
+    .details-btn:hover {
+      background: #087b3d;
+    }
+
+    .notification-btn {
+      background: #073a83;
+    }
+
+    .notification-btn:hover {
+      background: #052d67;
+    }
+
+    /* NO RESULT */
+
+    .no-result {
+      display: none;
+      background: white;
+      text-align: center;
+      padding: 30px 15px;
+      border-radius: 10px;
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .no-result h3 {
+      color: #073a83;
+      margin-bottom: 8px;
+    }
+
+    /* IMPORTANT INFO */
+
+    .important-info {
+      background: white;
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #d9dee8;
+      margin-top: 20px;
+    }
+
+    .important-info h2 {
+      color: #073a83;
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .important-info p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* MOBILE */
 
     @media (max-width: 600px) {
-      .header h1 {
+
+      .jobs-page {
+        padding: 12px 10px;
+      }
+
+      .jobs-heading h1 {
         font-size: 23px;
       }
 
-      .job-card h2 {
-        font-size: 18px;
+      .jobs-heading {
+        padding: 20px 15px;
       }
+
+      .filter-row {
+        flex-direction: column;
+      }
+
+      .filter-row input,
+      .filter-row select {
+        width: 100%;
+        min-width: 100%;
+      }
+
+      .job-title {
+        font-size: 16px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-<div class="container">
 
-  <a href="index.html" class="back">
-    ← Home
-  </a>
+<!-- ================= HEADER ================= -->
 
-  <div class="header">
-    <h1>🔥 Latest Government Jobs</h1>
-    <p>Latest Government Job Notifications</p>
-  </div>
+<header class="top-header">
 
-  <div class="notice">
-    ⚠️ अभी नीचे दी गई vacancy information demo/sample है।
-    Official notification verify करने के बाद ही final details publish करें।
-  </div>
+  <div class="brand">
 
+    <div class="logo-circle">
 
-  <!-- SEARCH -->
+      <div class="logo-main">
+        SCI
+      </div>
 
-  <div class="filters">
-
-    <input
-      type="text"
-      id="jobSearch"
-      placeholder="🔎 Search jobs..."
-      onkeyup="filterJobs()"
-    >
-
-    <select id="categoryFilter" onchange="filterJobs()">
-
-      <option value="all">
-        All Categories
-      </option>
-
-      <option value="bihar">
-        Bihar Jobs
-      </option>
-
-      <option value="central">
-        Central Jobs
-      </option>
-
-    </select>
-
-  </div>
-
-
-  <!-- JOB 1 -->
-
-  <div
-    class="job-card"
-    data-category="bihar"
-  >
-
-    <span class="badge">
-      📍 Bihar Government
-    </span>
-
-    <h2>
-      BPSC Recruitment
-    </h2>
-
-    <div class="job-info">
-
-      📍 Category: Bihar<br>
-
-      💼 Type: Government Job<br>
-
-      🎓 Qualification: Check Official Notification<br>
-
-      👥 Vacancies: To Be Updated<br>
-
-      📅 Last Date: To Be Updated
+      <div class="logo-small">
+        Sarkari Career India
+      </div>
 
     </div>
 
-    <a
-      href="bihar-jobs.html"
-      class="details-btn"
-    >
-      View Details →
-    </a>
+    <div>
 
-  </div>
+      <h1>
+        Sarkari
+        <span>Career</span>
+        <b>India</b>
+      </h1>
 
-
-  <!-- JOB 2 -->
-
-  <div
-    class="job-card"
-    data-category="central"
-  >
-
-    <span class="badge">
-      🏛 Central Government
-    </span>
-
-    <h2>
-      SSC Recruitment
-    </h2>
-
-    <div class="job-info">
-
-      📍 Category: Central<br>
-
-      💼 Type: Government Job<br>
-
-      🎓 Qualification: Check Official Notification<br>
-
-      👥 Vacancies: To Be Updated<br>
-
-      📅 Last Date: To Be Updated
+      <p>
+        Government Jobs • Results • Exams • Career
+      </p>
 
     </div>
 
-    <a
-      href="central-jobs.html"
-      class="details-btn"
-    >
-      View Details →
-    </a>
-
   </div>
 
 
-  <!-- JOB 3 -->
+  <div class="hero-art">
 
-  <div
-    class="job-card"
-    data-category="bihar"
-  >
+    <div class="tricolor"></div>
 
-    <span class="badge">
-      📍 Bihar Government
-    </span>
+    <div class="person">
+      👨‍🎓
+    </div>
 
-    <h2>
-      Bihar Police Recruitment
-    </h2>
+  </div>
 
-    <div class="job-info">
+</header>
 
-      📍 Category: Bihar<br>
 
-      💼 Type: Government Job<br>
+<!-- ================= NAVIGATION ================= -->
 
-      🎓 Qualification: Check Official Notification<br>
+<div class="nav-wrap">
 
-      👥 Vacancies: To Be Updated<br>
+  <div class="nav-main">
 
-      📅 Last Date: To Be Updated
+    <div class="mini-brand">
+
+      <strong>
+        SCI
+      </strong>
+
+      <span>
+        Sarkari
+        <b>Career India</b>
+      </span>
 
     </div>
 
-    <a
-      href="bihar-jobs.html"
-      class="details-btn"
-    >
-      View Details →
-    </a>
 
-  </div>
+    <div class="search">
 
+      <input
+        type="text"
+        id="siteSearch"
+        placeholder="Search Government Jobs..."
+      >
 
-  <!-- JOB 4 -->
-
-  <div
-    class="job-card"
-    data-category="central"
-  >
-
-    <span class="badge">
-      🏛 Central Government
-    </span>
-
-    <h2>
-      UPSC Recruitment
-    </h2>
-
-    <div class="job-info">
-
-      📍 Category: Central<br>
-
-      💼 Type: Government Job<br>
-
-      🎓 Qualification: Check Official Notification<br>
-
-      👥 Vacancies: To Be Updated<br>
-
-      📅 Last Date: To Be Updated
+      <button onclick="siteSearch()">
+        🔍
+      </button>
 
     </div>
 
-    <a
-      href="central-jobs.html"
-      class="details-btn"
+
+    <div class="socials">
+
+      <a href="#" title="Facebook">
+        f
+      </a>
+
+      <a href="#" title="Telegram">
+        ✈
+      </a>
+
+      <a href="#" title="WhatsApp">
+        ☘
+      </a>
+
+      <a href="#" title="Instagram">
+        ◎
+      </a>
+
+    </div>
+
+
+    <button
+      class="hamburger"
+      onclick="toggleMenu()"
     >
-      View Details →
+      ☰
+    </button>
+
+  </div>
+
+
+  <nav id="navMenu">
+
+    <a href="index.html">
+      ⌂ Home
     </a>
 
-  </div>
+    <a href="jobs.html">
+      ▣ Latest Jobs
+    </a>
 
+    <a href="results.html">
+      🏆 Results
+    </a>
 
-  <div class="footer">
-    © 2026 Sarkari Career India
-  </div>
+    <a href="admit-card.html">
+      📨 Admit Card
+    </a>
+
+    <a href="answer-key.html">
+      🔑 Answer Key
+    </a>
+
+    <a href="syllabus.html">
+      📖 Syllabus
+    </a>
+
+    <a href="scholarship.html">
+      🎓 Scholarship
+    </a>
+
+    <a href="bihar-jobs.html">
+      📍 Bihar Jobs
+    </a>
+
+    <a href="central-jobs.html">
+      🏛 Central Jobs
+    </a>
+
+    <a href="contact.html">
+      ☎ Contact
+    </a>
+
+  </nav>
 
 </div>
 
 
+<!-- ================= MAIN ================= -->
+
+<main class="jobs-page">
+
+
+  <!-- BACK -->
+
+  <a
+    href="index.html"
+    class="back-btn"
+  >
+    ← Home
+  </a>
+
+
+  <!-- HEADING -->
+
+  <section class="jobs-heading">
+
+    <h1>
+      🔥 Latest Government Jobs
+    </h1>
+
+    <p>
+      Latest Government Job Notifications, Vacancies & Application Updates
+    </p>
+
+  </section>
+
+
+  <!-- NOTICE -->
+
+  <div class="jobs-notice">
+
+    ⚠️ <strong>Important:</strong>
+    नीचे दी गई vacancy information अभी demo/sample है।
+    Final details publish करने से पहले संबंधित official notification
+    और official government website से जरूर verify करें।
+
+  </div>
+
+
+  <!-- FILTER -->
+
+  <section class="jobs-filters">
+
+    <h3>
+      🔎 Search & Filter Jobs
+    </h3>
+
+    <div class="filter-row">
+
+      <input
+        type="text"
+        id="jobSearch"
+        placeholder="Search jobs..."
+        onkeyup="filterJobs()"
+      >
+
+
+      <select
+        id="categoryFilter"
+        onchange="filterJobs()"
+      >
+
+        <option value="all">
+          All Categories
+        </option>
+
+        <option value="bihar">
+          📍 Bihar Government
+        </option>
+
+        <option value="central">
+          🏛 Central Government
+        </option>
+
+      </select>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= JOB 1 ================= -->
+
+  <article
+    class="job-card"
+    data-category="bihar"
+  >
+
+    <div class="job-title">
+      📍 BPSC Recruitment
+    </div>
+
+    <div class="job-content">
+
+      <span class="job-badge">
+        Bihar Government
+      </span>
+
+      <div class="job-info">
+
+        <strong>📍 Category:</strong>
+        Bihar
+        <br>
+
+        <strong>💼 Type:</strong>
+        Government Job
+        <br>
+
+        <strong>🎓 Qualification:</strong>
+        Check Official Notification
+        <br>
+
+        <strong>👥 Vacancies:</strong>
+        To Be Updated
+        <br>
+
+        <strong>📅 Last Date:</strong>
+        To Be Updated
+
+      </div>
+
+
+      <div class="job-buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="job-btn details-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="#"
+          class="job-btn notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ================= JOB 2 ================= -->
+
+  <article
+    class="job-card"
+    data-category="central"
+  >
+
+    <div class="job-title">
+      🏛 SSC Recruitment
+    </div>
+
+    <div class="job-content">
+
+      <span class="job-badge">
+        Central Government
+      </span>
+
+      <div class="job-info">
+
+        <strong>📍 Category:</strong>
+        Central
+        <br>
+
+        <strong>💼 Type:</strong>
+        Government Job
+        <br>
+
+        <strong>🎓 Qualification:</strong>
+        Check Official Notification
+        <br>
+
+        <strong>👥 Vacancies:</strong>
+        To Be Updated
+        <br>
+
+        <strong>📅 Last Date:</strong>
+        To Be Updated
+
+      </div>
+
+
+      <div class="job-buttons">
+
+        <a
+          href="central-jobs.html"
+          class="job-btn details-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="#"
+          class="job-btn notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ================= JOB 3 ================= -->
+
+  <article
+    class="job-card"
+    data-category="bihar"
+  >
+
+    <div class="job-title">
+      👮 Bihar Police Recruitment
+    </div>
+
+    <div class="job-content">
+
+      <span class="job-badge">
+        Bihar Government
+      </span>
+
+      <div class="job-info">
+
+        <strong>📍 Category:</strong>
+        Bihar
+        <br>
+
+        <strong>💼 Type:</strong>
+        Government Job
+        <br>
+
+        <strong>🎓 Qualification:</strong>
+        Check Official Notification
+        <br>
+
+        <strong>👥 Vacancies:</strong>
+        To Be Updated
+        <br>
+
+        <strong>📅 Last Date:</strong>
+        To Be Updated
+
+      </div>
+
+
+      <div class="job-buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="job-btn details-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="#"
+          class="job-btn notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- ================= JOB 4 ================= -->
+
+  <article
+    class="job-card"
+    data-category="central"
+  >
+
+    <div class="job-title">
+      🏛 UPSC Recruitment
+    </div>
+
+    <div class="job-content">
+
+      <span class="job-badge">
+        Central Government
+      </span>
+
+      <div class="job-info">
+
+        <strong>📍 Category:</strong>
+        Central
+        <br>
+
+        <strong>💼 Type:</strong>
+        Government Job
+        <br>
+
+        <strong>🎓 Qualification:</strong>
+        Check Official Notification
+        <br>
+
+        <strong>👥 Vacancies:</strong>
+        To Be Updated
+        <br>
+
+        <strong>📅 Last Date:</strong>
+        To Be Updated
+
+      </div>
+
+
+      <div class="job-buttons">
+
+        <a
+          href="central-jobs.html"
+          class="job-btn details-btn"
+        >
+          View Details →
+        </a>
+
+        <a
+          href="#"
+          class="job-btn notification-btn"
+        >
+          📄 Official Notification
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- NO RESULT -->
+
+  <div
+    id="noResult"
+    class="no-result"
+  >
+
+    <h3>
+      😔 No Jobs Found
+    </h3>
+
+    <p>
+      Please try another search keyword or category.
+    </p>
+
+  </div>
+
+
+  <!-- IMPORTANT INFO -->
+
+  <section class="important-info">
+
+    <h2>
+      📌 Important Information
+    </h2>
+
+    <p>
+      Sarkari Career India पर दी गई job information को
+      application करने से पहले संबंधित official notification
+      से verify करें। Qualification, vacancy, application dates,
+      age limit और selection process recruitment के अनुसार अलग
+      हो सकते हैं।
+    </p>
+
+  </section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+  <div>
+
+    <span class="footer-logo">
+      SCI
+    </span>
+
+    <strong>
+
+      Sarkari Career
+
+      <span>
+        India
+      </span>
+
+    </strong>
+
+    <small>
+      Government Jobs & Career Information
+    </small>
+
+  </div>
+
+
+  <div>
+
+    <strong>
+      Quick Links
+    </strong>
+
+    <br>
+
+    <a href="index.html">
+      Home
+    </a>
+
+    |
+
+    <a href="jobs.html">
+      Latest Jobs
+    </a>
+
+    |
+
+    <a href="results.html">
+      Results
+    </a>
+
+    |
+
+    <a href="admit-card.html">
+      Admit Card
+    </a>
+
+  </div>
+
+
+  <div>
+
+    <strong>
+      Contact
+    </strong>
+
+    <br>
+
+    <a href="contact.html">
+      Contact Us
+    </a>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
 <script>
+
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+
+  document
+    .getElementById("navMenu")
+    .classList
+    .toggle("open");
+
+}
+
+
+/* JOB SEARCH + CATEGORY FILTER */
 
 function filterJobs() {
 
@@ -363,21 +914,29 @@ function filterJobs() {
     document
       .getElementById("jobSearch")
       .value
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
+
 
   let category =
     document
       .getElementById("categoryFilter")
       .value;
 
+
   let cards =
     document.querySelectorAll(".job-card");
 
 
+  let visibleJobs = 0;
+
+
   cards.forEach(function(card) {
+
 
     let text =
       card.innerText.toLowerCase();
+
 
     let cardCategory =
       card.getAttribute("data-category");
@@ -385,6 +944,7 @@ function filterJobs() {
 
     let searchMatch =
       text.includes(search);
+
 
     let categoryMatch =
       category === "all" ||
@@ -398,7 +958,11 @@ function filterJobs() {
 
       card.style.display = "block";
 
-    } else {
+      visibleJobs++;
+
+    }
+
+    else {
 
       card.style.display = "none";
 
@@ -406,9 +970,67 @@ function filterJobs() {
 
   });
 
+
+  let noResult =
+    document.getElementById("noResult");
+
+
+  if (visibleJobs === 0) {
+
+    noResult.style.display = "block";
+
+  }
+
+  else {
+
+    noResult.style.display = "none";
+
+  }
+
+}
+
+
+/* TOP SEARCH */
+
+function siteSearch() {
+
+  let query =
+    document
+      .getElementById("siteSearch")
+      .value
+      .trim();
+
+
+  if (query === "") {
+
+    alert(
+      "Please enter a job name to search."
+    );
+
+    return;
+
+  }
+
+
+  document
+    .getElementById("jobSearch")
+    .value = query;
+
+
+  filterJobs();
+
+
+  document
+    .querySelector(".jobs-filters")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
 }
 
 </script>
 
+
 </body>
+
 </html>
