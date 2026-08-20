@@ -10,9 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Latest Admit Cards - Sarkari Career India
-  </title>
+  <title>Latest Admit Cards - Sarkari Career India</title>
 
   <link
     rel="stylesheet"
@@ -21,235 +19,255 @@
 
   <style>
 
+    /* ================= ADMIT CARD PAGE ================= */
+
     .admit-page {
-
       width: min(100%, 1200px);
-
       margin: auto;
-
+      padding: 20px 15px;
       background: #f6f7fb;
-
-      padding: 15px;
-
     }
-
 
     .admit-heading {
-
-      background: #073a83;
-
+      background: linear-gradient(135deg, #0f766e, #115e59);
       color: white;
-
-      padding: 18px;
-
-      border-radius: 10px;
-
-      margin-bottom: 15px;
-
+      padding: 25px 20px;
+      border-radius: 12px;
+      margin-bottom: 18px;
     }
-
 
     .admit-heading h1 {
-
       margin: 0;
-
       font-size: 28px;
-
     }
-
 
     .admit-heading p {
-
-      margin: 7px 0 0;
-
-    }
-
-
-    .admit-card {
-
-      background: white;
-
-      border: 1px solid #d9dee8;
-
-      border-radius: 10px;
-
-      margin-bottom: 15px;
-
-      overflow: hidden;
-
-      box-shadow: 0 2px 6px #0002;
-
-    }
-
-
-    .admit-title {
-
-      background: #7137cf;
-
-      color: white;
-
-      padding: 13px 15px;
-
-      font-size: 18px;
-
-      font-weight: bold;
-
-    }
-
-
-    .admit-info {
-
-      padding: 15px;
-
-    }
-
-
-    .admit-info p {
-
-      margin: 8px 0;
-
+      margin: 8px 0 0;
       font-size: 14px;
-
     }
 
-
-    .admit-info strong {
-
-      color: #073a83;
-
-    }
-
-
-    .admit-buttons {
-
-      display: flex;
-
-      gap: 8px;
-
-      flex-wrap: wrap;
-
-      margin-top: 12px;
-
-    }
-
-
-    .admit-buttons a {
-
-      padding: 10px 15px;
-
-      border-radius: 6px;
-
-      color: white;
-
-      font-weight: bold;
-
-      font-size: 13px;
-
-      text-decoration: none;
-
-    }
-
-
-    .download-btn {
-
-      background: #10954e;
-
-    }
-
-
-    .notification-btn {
-
-      background: #073a83;
-
-    }
-
+    /* BACK BUTTON */
 
     .back-btn {
-
       display: inline-block;
-
       background: #ff7900;
-
       color: white;
-
-      padding: 10px 18px;
-
-      border-radius: 20px;
-
-      font-weight: bold;
-
-      margin-bottom: 15px;
-
       text-decoration: none;
-
-    }
-
-
-    .search-message {
-
-      display: none;
-
-      background: #fff7ed;
-
-      border: 1px solid #fed7aa;
-
-      color: #9a3412;
-
-      padding: 12px;
-
-      border-radius: 8px;
-
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: bold;
       margin-bottom: 15px;
-
-      font-size: 14px;
-
     }
 
+    .back-btn:hover {
+      background: #e56700;
+    }
+
+    /* NOTICE */
+
+    .admit-notice {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* FILTER */
+
+    .admit-filters {
+      background: white;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid #e1e5ec;
+      box-shadow: 0 3px 10px #0001;
+      margin-bottom: 18px;
+    }
+
+    .admit-filters h3 {
+      color: #073a83;
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-row input,
+    .filter-row select {
+      flex: 1;
+      min-width: 200px;
+      padding: 11px;
+      border: 1px solid #d5d9e0;
+      border-radius: 7px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .filter-row input:focus,
+    .filter-row select:focus {
+      border-color: #073a83;
+    }
+
+    /* ADMIT CARD */
+
+    .admit-card-item {
+      background: white;
+      border: 1px solid #d9dee8;
+      border-left: 5px solid #0f766e;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: 0 2px 7px #0002;
+    }
+
+    .admit-title {
+      background: #073a83;
+      color: white;
+      padding: 13px 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .admit-content {
+      padding: 15px;
+    }
+
+    .admit-badge {
+      display: inline-block;
+      background: #ccfbf1;
+      color: #115e59;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .admit-info {
+      color: #444;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .admit-info strong {
+      color: #073a83;
+    }
+
+    /* BUTTONS */
+
+    .admit-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 13px;
+    }
+
+    .admit-btn {
+      display: inline-block;
+      padding: 10px 15px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .download-btn {
+      background: #10954e;
+    }
+
+    .download-btn:hover {
+      background: #087b3d;
+    }
+
+    .official-btn {
+      background: #073a83;
+    }
+
+    .official-btn:hover {
+      background: #052d67;
+    }
+
+    /* NO RESULT */
+
+    .no-result {
+      display: none;
+      background: white;
+      text-align: center;
+      padding: 30px 15px;
+      border-radius: 10px;
+      color: #666;
+      border: 1px solid #ddd;
+    }
+
+    .no-result h3 {
+      color: #073a83;
+      margin-bottom: 8px;
+    }
+
+    /* IMPORTANT INFORMATION */
 
     .important-info {
-
       background: white;
-
-      padding: 15px;
-
-      margin-top: 15px;
-
+      padding: 18px;
       border-radius: 10px;
-
-      box-shadow: 0 2px 6px #0001;
-
+      border: 1px solid #d9dee8;
+      margin-top: 20px;
     }
-
 
     .important-info h2 {
-
       color: #073a83;
-
-      margin-top: 0;
-
+      font-size: 19px;
+      margin-bottom: 10px;
     }
 
+    .important-info p,
+    .important-info li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
 
-    @media(max-width:600px) {
+    .important-info ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
 
       .admit-page {
-
-        padding: 10px;
-
+        padding: 12px 10px;
       }
-
 
       .admit-heading h1 {
-
         font-size: 23px;
-
       }
 
+      .admit-heading {
+        padding: 20px 15px;
+      }
+
+      .filter-row {
+        flex-direction: column;
+      }
+
+      .filter-row input,
+      .filter-row select {
+        width: 100%;
+        min-width: 100%;
+      }
 
       .admit-title {
-
         font-size: 16px;
-
       }
 
     }
@@ -262,13 +280,59 @@
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+  <div class="brand">
+
+    <div class="logo-circle">
+
+      <div class="logo-main">
+        SCI
+      </div>
+
+      <div class="logo-small">
+        Sarkari Career India
+      </div>
+
+    </div>
+
+    <div>
+
+      <h1>
+        Sarkari
+        <span>Career</span>
+        <b>India</b>
+      </h1>
+
+      <p>
+        Government Jobs • Results • Exams • Career
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="hero-art">
+
+    <div class="tricolor"></div>
+
+    <div class="person">
+      👨‍🎓
+    </div>
+
+  </div>
+
+</header>
+
+
 <!-- ================= NAVIGATION ================= -->
 
 <div class="nav-wrap">
 
-
   <div class="nav-main">
-
 
     <div class="mini-brand">
 
@@ -288,15 +352,34 @@
 
       <input
         type="text"
-        id="searchInput"
+        id="siteSearch"
         placeholder="Search Admit Cards..."
       >
 
-      <button
-        onclick="searchAdmitCards()"
-      >
+      <button onclick="siteSearch()">
         🔍
       </button>
+
+    </div>
+
+
+    <div class="socials">
+
+      <a href="#" title="Facebook">
+        f
+      </a>
+
+      <a href="#" title="Telegram">
+        ✈
+      </a>
+
+      <a href="#" title="WhatsApp">
+        ☘
+      </a>
+
+      <a href="#" title="Instagram">
+        ◎
+      </a>
 
     </div>
 
@@ -313,66 +396,49 @@
 
   <nav id="navMenu">
 
-
     <a href="index.html">
       ⌂ Home
     </a>
 
-
     <a href="jobs.html">
-      💼 Latest Jobs
+      ▣ Latest Jobs
     </a>
-
 
     <a href="results.html">
       🏆 Results
     </a>
 
-
     <a href="admit-card.html">
       📨 Admit Card
     </a>
-
 
     <a href="answer-key.html">
       🔑 Answer Key
     </a>
 
-
     <a href="syllabus.html">
       📖 Syllabus
     </a>
-
 
     <a href="scholarship.html">
       🎓 Scholarship
     </a>
 
-
     <a href="bihar-jobs.html">
       📍 Bihar Jobs
     </a>
-
 
     <a href="central-jobs.html">
       🏛 Central Jobs
     </a>
 
-
-    <a href="exams.html">
-      📝 Exams
-    </a>
-
-
     <a href="contact.html">
       ☎ Contact
     </a>
 
-
   </nav>
 
 </div>
-
 
 
 <!-- ================= MAIN ================= -->
@@ -380,16 +446,17 @@
 <main class="admit-page">
 
 
+  <!-- BACK -->
+
   <a
-    class="back-btn"
     href="index.html"
+    class="back-btn"
   >
-    ← Back to Home
+    ← Home
   </a>
 
 
-
-  <!-- PAGE HEADING -->
+  <!-- HEADING -->
 
   <section class="admit-heading">
 
@@ -398,318 +465,365 @@
     </h1>
 
     <p>
-      Download Government Exam Admit Cards & Check Exam Dates
+      Government Exam Admit Cards, Hall Tickets & Download Updates
     </p>
 
   </section>
 
 
+  <!-- NOTICE -->
 
-  <!-- SEARCH MESSAGE -->
+  <div class="admit-notice">
 
-  <div
-    id="searchMessage"
-    class="search-message"
-  >
+    ⚠️ <strong>Important:</strong>
+    नीचे दी गई admit card information अभी demo/sample है।
+    Admit Card download करने से पहले संबंधित official examination
+    authority की website से details जरूर verify करें।
+
   </div>
 
+
+  <!-- FILTER -->
+
+  <section class="admit-filters">
+
+    <h3>
+      🔎 Search & Filter Admit Cards
+    </h3>
+
+    <div class="filter-row">
+
+      <input
+        type="text"
+        id="admitSearch"
+        placeholder="Search exam / admit card..."
+        onkeyup="filterAdmitCards()"
+      >
+
+
+      <select
+        id="admitFilter"
+        onchange="filterAdmitCards()"
+      >
+
+        <option value="all">
+          All Categories
+        </option>
+
+        <option value="bihar">
+          📍 Bihar Government
+        </option>
+
+        <option value="central">
+          🏛 Central Government
+        </option>
+
+      </select>
+
+    </div>
+
+  </section>
 
 
   <!-- ================= ADMIT CARD 1 ================= -->
 
   <article
-    class="admit-card"
-    data-search="government examination admit card"
+    class="admit-card-item"
+    data-category="bihar"
   >
 
-
     <div class="admit-title">
-
-      🔥 Latest Government Exam Admit Card
-
+      📍 BPSC Examination Admit Card
     </div>
 
+    <div class="admit-content">
 
-    <div class="admit-info">
+      <span class="admit-badge">
+        Bihar Government
+      </span>
 
+      <div class="admit-info">
 
-      <p>
-        <strong>
-          Exam Name:
-        </strong>
+        <strong>📍 Category:</strong>
+        Bihar
+        <br>
 
-        Government Examination
-      </p>
+        <strong>📝 Examination:</strong>
+        BPSC Examination
+        <br>
 
+        <strong>📅 Exam Date:</strong>
+        To Be Updated
+        <br>
 
-      <p>
-        <strong>
-          Organization:
-        </strong>
-
-        Government Department
-      </p>
-
-
-      <p>
-        <strong>
-          Exam Date:
-        </strong>
-
-        Check Official Notification
-      </p>
-
-
-      <p>
-        <strong>
-          Admit Card Status:
-        </strong>
-
-        Available / To be updated
-      </p>
-
-
-      <p>
-        <strong>
-          Release Date:
-        </strong>
-
+        <strong>📄 Admit Card:</strong>
         Check Official Website
-      </p>
-
-
-      <div class="admit-buttons">
-
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📨 Download Admit Card
-        </a>
-
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
 
       </div>
 
 
+      <div class="admit-buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="admit-btn download-btn"
+        >
+          📄 View Details →
+        </a>
+
+        <a
+          href="https://www.bpsc.bih.nic.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admit-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
     </div>
 
-
   </article>
-
 
 
   <!-- ================= ADMIT CARD 2 ================= -->
 
   <article
-    class="admit-card"
-    data-search="new recruitment examination admit card"
+    class="admit-card-item"
+    data-category="central"
   >
 
-
     <div class="admit-title">
-
-      🆕 New Admit Card Update
-
+      🏛 SSC Examination Admit Card
     </div>
 
+    <div class="admit-content">
 
-    <div class="admit-info">
+      <span class="admit-badge">
+        Central Government
+      </span>
 
+      <div class="admit-info">
 
-      <p>
-        <strong>
-          Exam Name:
-        </strong>
+        <strong>📍 Category:</strong>
+        Central
+        <br>
 
-        Recruitment Examination
-      </p>
+        <strong>📝 Examination:</strong>
+        SSC Examination
+        <br>
 
+        <strong>📅 Exam Date:</strong>
+        To Be Updated
+        <br>
 
-      <p>
-        <strong>
-          Organization:
-        </strong>
-
-        Government Organization
-      </p>
-
-
-      <p>
-        <strong>
-          Exam Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <p>
-        <strong>
-          Admit Card Status:
-        </strong>
-
-        Coming Soon
-      </p>
-
-
-      <p>
-        <strong>
-          Release Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <div class="admit-buttons">
-
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📨 Download Admit Card
-        </a>
-
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
+        <strong>📄 Admit Card:</strong>
+        Check Official Website
 
       </div>
 
 
+      <div class="admit-buttons">
+
+        <a
+          href="central-jobs.html"
+          class="admit-btn download-btn"
+        >
+          📄 View Details →
+        </a>
+
+        <a
+          href="https://ssc.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admit-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
     </div>
 
-
   </article>
-
 
 
   <!-- ================= ADMIT CARD 3 ================= -->
 
   <article
-    class="admit-card"
-    data-search="upcoming government recruitment examination"
+    class="admit-card-item"
+    data-category="central"
   >
 
-
     <div class="admit-title">
-
-      📢 Upcoming Examination
-
+      🏛 UPSC Civil Services Admit Card
     </div>
 
+    <div class="admit-content">
 
-    <div class="admit-info">
+      <span class="admit-badge">
+        Central Government
+      </span>
 
+      <div class="admit-info">
 
-      <p>
-        <strong>
-          Exam Name:
-        </strong>
+        <strong>📍 Category:</strong>
+        Central
+        <br>
 
-        Government Recruitment Exam
-      </p>
+        <strong>📝 Examination:</strong>
+        UPSC Civil Services Examination
+        <br>
 
+        <strong>📅 Exam Date:</strong>
+        To Be Updated
+        <br>
 
-      <p>
-        <strong>
-          Organization:
-        </strong>
-
-        Government Organization
-      </p>
-
-
-      <p>
-        <strong>
-          Exam Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <p>
-        <strong>
-          Admit Card Status:
-        </strong>
-
-        Coming Soon
-      </p>
-
-
-      <p>
-        <strong>
-          Release Date:
-        </strong>
-
-        To be updated
-      </p>
-
-
-      <div class="admit-buttons">
-
-
-        <a
-          href="#"
-          class="download-btn"
-        >
-          📨 Download Admit Card
-        </a>
-
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
+        <strong>📄 Admit Card:</strong>
+        Check Official Website
 
       </div>
 
 
-    </div>
+      <div class="admit-buttons">
 
+        <a
+          href="central-jobs.html"
+          class="admit-btn download-btn"
+        >
+          📄 View Details →
+        </a>
+
+        <a
+          href="https://upsc.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admit-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
 
   </article>
 
 
+  <!-- ================= ADMIT CARD 4 ================= -->
 
-  <!-- ================= IMPORTANT INFORMATION ================= -->
+  <article
+    class="admit-card-item"
+    data-category="bihar"
+  >
+
+    <div class="admit-title">
+      👮 Bihar Police Admit Card
+    </div>
+
+    <div class="admit-content">
+
+      <span class="admit-badge">
+        Bihar Government
+      </span>
+
+      <div class="admit-info">
+
+        <strong>📍 Category:</strong>
+        Bihar
+        <br>
+
+        <strong>📝 Examination:</strong>
+        Bihar Police Recruitment Examination
+        <br>
+
+        <strong>📅 Exam Date:</strong>
+        To Be Updated
+        <br>
+
+        <strong>📄 Admit Card:</strong>
+        Check Official Website
+
+      </div>
+
+
+      <div class="admit-buttons">
+
+        <a
+          href="bihar-jobs.html"
+          class="admit-btn download-btn"
+        >
+          📄 View Details →
+        </a>
+
+        <a
+          href="https://csbc.bihar.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admit-btn official-btn"
+        >
+          🌐 Official Website
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- NO RESULT -->
+
+  <div
+    id="noResult"
+    class="no-result"
+  >
+
+    <h3>
+      😔 No Admit Card Found
+    </h3>
+
+    <p>
+      Please try another search keyword or category.
+    </p>
+
+  </div>
+
+
+  <!-- IMPORTANT INFORMATION -->
 
   <section class="important-info">
-
 
     <h2>
       📌 Important Information
     </h2>
 
-
     <p>
-
-      Always download your admit card from the
-      official government website and carefully
-      check your name, examination centre,
-      date and reporting time.
-
+      Admit Card download करने से पहले official examination
+      authority की website पर exam name, exam date और application
+      details जरूर verify करें।
     </p>
 
+    <ul>
+
+      <li>
+        Admit Card केवल official website से download करें।
+      </li>
+
+      <li>
+        Registration Number / Roll Number तैयार रखें।
+      </li>
+
+      <li>
+        Exam centre और reporting time ध्यान से check करें।
+      </li>
+
+      <li>
+        किसी unknown website को OTP या personal information न दें।
+      </li>
+
+    </ul>
 
   </section>
 
@@ -717,41 +831,34 @@
 </main>
 
 
-
 <!-- ================= FOOTER ================= -->
 
-<footer>
-
+<footer id="contact">
 
   <div>
-
 
     <span class="footer-logo">
       SCI
     </span>
 
-
     <strong>
 
       Sarkari Career
+
       <span>
         India
       </span>
 
     </strong>
 
-
     <small>
       Government Jobs & Career Information
     </small>
 
-
   </div>
 
 
-
   <div>
-
 
     <strong>
       Quick Links
@@ -759,13 +866,11 @@
 
     <br>
 
-
     <a href="index.html">
       Home
     </a>
 
     |
-
 
     <a href="jobs.html">
       Latest Jobs
@@ -773,30 +878,42 @@
 
     |
 
-
     <a href="results.html">
       Results
     </a>
 
     |
 
-
-    <a href="contact.html">
-      Contact
+    <a href="admit-card.html">
+      Admit Card
     </a>
-
 
   </div>
 
 
+  <div>
+
+    <strong>
+      Contact
+    </strong>
+
+    <br>
+
+    <a href="contact.html">
+      Contact Us
+    </a>
+
+  </div>
+
 </footer>
 
 
-
-<!-- ================= JAVASCRIPT ================= -->
+<!-- ================= SCRIPT ================= -->
 
 <script>
 
+
+/* MOBILE MENU */
 
 function toggleMenu() {
 
@@ -808,90 +925,123 @@ function toggleMenu() {
 }
 
 
+/* ADMIT CARD SEARCH + FILTER */
 
-function searchAdmitCards() {
+function filterAdmitCards() {
 
-
-  let query =
+  let search =
     document
-      .getElementById("searchInput")
+      .getElementById("admitSearch")
       .value
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
+
+
+  let category =
+    document
+      .getElementById("admitFilter")
+      .value;
 
 
   let cards =
-    document.querySelectorAll(
-      ".admit-card"
-    );
+    document.querySelectorAll(".admit-card-item");
 
 
-  let message =
-    document.getElementById(
-      "searchMessage"
-    );
+  let visibleCards = 0;
+
+
+  cards.forEach(function(card) {
+
+    let text =
+      card.innerText.toLowerCase();
+
+    let cardCategory =
+      card.getAttribute("data-category");
+
+
+    let searchMatch =
+      text.includes(search);
+
+
+    let categoryMatch =
+      category === "all" ||
+      cardCategory === category;
+
+
+    if (
+      searchMatch &&
+      categoryMatch
+    ) {
+
+      card.style.display = "block";
+
+      visibleCards++;
+
+    }
+
+    else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  let noResult =
+    document.getElementById("noResult");
+
+
+  if (visibleCards === 0) {
+
+    noResult.style.display = "block";
+
+  }
+
+  else {
+
+    noResult.style.display = "none";
+
+  }
+
+}
+
+
+/* TOP SEARCH */
+
+function siteSearch() {
+
+  let query =
+    document
+      .getElementById("siteSearch")
+      .value
+      .trim();
 
 
   if (query === "") {
 
-
-    cards.forEach(function(card) {
-
-      card.style.display = "block";
-
-    });
-
-
-    message.style.display = "none";
+    alert(
+      "Please enter an exam name to search."
+    );
 
     return;
 
   }
 
 
-  let found = false;
+  document
+    .getElementById("admitSearch")
+    .value = query;
 
 
-  cards.forEach(function(card) {
+  filterAdmitCards();
 
 
-    let text =
-      card.innerText.toLowerCase();
-
-
-    if (
-      text.includes(query)
-    ) {
-
-      card.style.display = "block";
-
-      found = true;
-
-    } else {
-
-      card.style.display = "none";
-
-    }
-
-
-  });
-
-
-  message.style.display = "block";
-
-
-  if (found) {
-
-    message.innerText =
-      "✅ Search results found.";
-
-  } else {
-
-    message.innerText =
-      "❌ No admit card found for: " + query;
-
-  }
-
+  document
+    .querySelector(".admit-filters")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
 }
 
@@ -900,4 +1050,4 @@ function searchAdmitCards() {
 
 </body>
 
-</html>
+        </html>
