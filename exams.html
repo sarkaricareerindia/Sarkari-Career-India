@@ -1,709 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
+<title>Government Exams - Sarkari Career India</title>
+<link rel="stylesheet" href="style.css">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.exam-page{
+width:min(100%,1200px);
+margin:auto;
+background:#f6f7fb;
+padding:20px 15px;
+}
 
-  <title>Government Exams - Sarkari Career India</title>
+.exam-heading{
+background:linear-gradient(135deg,#7c3aed,#4c1d95);
+color:white;
+padding:25px 20px;
+border-radius:12px;
+margin-bottom:18px;
+}
 
-  <link rel="stylesheet" href="style.css">
+.exam-heading h1{margin:0;font-size:28px}
+.exam-heading p{margin:8px 0 0;font-size:14px}
 
-  <style>
+.back{
+display:inline-block;
+background:#ff7900;
+color:white;
+text-decoration:none;
+padding:10px 18px;
+border-radius:20px;
+font-weight:bold;
+margin-bottom:15px;
+}
 
-    .exams-page {
-      width: min(100%, 1200px);
-      margin: auto;
-      background: #f6f7fb;
-      padding: 15px;
-    }
+.notice{
+background:#f5f3ff;
+border:1px solid #ddd6fe;
+color:#5b21b6;
+padding:14px;
+border-radius:10px;
+margin-bottom:18px;
+font-size:13px;
+line-height:1.6;
+}
 
-    .exams-heading {
-      background: #073a83;
-      color: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 18px;
-    }
+.exam-filters{
+background:white;
+padding:15px;
+border-radius:12px;
+border:1px solid #e1e5ec;
+box-shadow:0 3px 10px #0001;
+margin-bottom:18px;
+}
 
-    .exams-heading h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+.exam-filters h3{
+color:#073a83;
+margin:0 0 12px;
+}
 
-    .exams-heading p {
-      margin: 8px 0 0;
-    }
+.filter-row{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
 
-    .exam-card {
-      background: white;
-      border: 1px solid #d9dee8;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      overflow: hidden;
-      box-shadow: 0 2px 7px #0002;
-    }
+.filter-row input,
+.filter-row select{
+flex:1;
+min-width:200px;
+padding:11px;
+border:1px solid #d5d9e0;
+border-radius:7px;
+font-size:14px;
+}
 
-    .exam-title {
-      background: #7137cf;
-      color: white;
-      padding: 14px 16px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+.exam-card{
+background:white;
+border:1px solid #d9dee8;
+border-left:5px solid #7c3aed;
+border-radius:12px;
+margin-bottom:16px;
+overflow:hidden;
+box-shadow:0 2px 7px #0002;
+}
 
-    .exam-info {
-      padding: 16px;
-    }
+.exam-title{
+background:#7c3aed;
+color:white;
+padding:14px 16px;
+font-size:18px;
+font-weight:bold;
+}
 
-    .exam-info p {
-      margin: 8px 0;
-      font-size: 14px;
-    }
+.exam-info{padding:16px}
 
-    .exam-info strong {
-      color: #073a83;
-    }
+.badge{
+display:inline-block;
+background:#ede9fe;
+color:#5b21b6;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+margin-bottom:10px;
+}
 
-    .exam-list {
-      padding-left: 20px;
-      margin: 10px 0;
-      line-height: 1.8;
-      font-size: 14px;
-    }
+.exam-info p{
+margin:8px 0;
+font-size:14px;
+line-height:1.6;
+}
 
-    .exam-list li::marker {
-      color: #ff7900;
-    }
+.exam-info strong{color:#073a83}
 
-    .exam-buttons {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
+.buttons{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:14px;
+}
 
-    .exam-buttons a {
-      display: inline-block;
-      padding: 10px 15px;
-      border-radius: 7px;
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-    }
+.buttons a{
+display:inline-block;
+padding:10px 15px;
+border-radius:7px;
+color:white;
+text-decoration:none;
+font-size:13px;
+font-weight:bold;
+}
 
-    .syllabus-btn {
-      background: #10954e;
-    }
+.official{background:#073a83}
+.details{background:#10954e}
 
-    .notification-btn {
-      background: #073a83;
-    }
+.no-result{
+display:none;
+background:white;
+text-align:center;
+padding:30px;
+border-radius:10px;
+border:1px solid #ddd;
+color:#666;
+}
 
-    .back-btn {
-      display: inline-block;
-      background: #ff7900;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+.info-box{
+background:white;
+border-left:5px solid #ff7900;
+padding:18px;
+border-radius:10px;
+margin-top:20px;
+}
 
-    .info-box {
-      background: white;
-      border-left: 5px solid #ff7900;
-      padding: 16px;
-      border-radius: 10px;
-      margin-top: 18px;
-    }
+.info-box h2{color:#073a83;margin-top:0}
 
-    .info-box h2 {
-      color: #073a83;
-      margin-top: 0;
-    }
+.info-box p,
+.info-box li{
+font-size:14px;
+line-height:1.7;
+color:#555;
+}
 
-    @media (max-width: 600px) {
-
-      .exams-page {
-        padding: 10px;
-      }
-
-      .exams-heading h1 {
-        font-size: 23px;
-      }
-
-    }
-
-  </style>
-
+@media(max-width:600px){
+.exam-page{padding:12px 10px}
+.exam-heading h1{font-size:23px}
+.filter-row{flex-direction:column}
+.filter-row input,
+.filter-row select{
+width:100%;
+min-width:100%;
+}
+.exam-title{font-size:16px}
+}
+</style>
 </head>
-
 
 <body>
 
-
-<!-- ================= NAVIGATION ================= -->
-
 <div class="nav-wrap">
 
-  <div class="nav-main">
+<div class="nav-main">
 
-    <div class="mini-brand">
+<div class="mini-brand">
+<strong>SCI</strong>
+<span>Sarkari <b>Career India</b></span>
+</div>
 
-      <strong>SCI</strong>
+<div class="search">
+<input type="text" id="siteSearch" placeholder="Search Exams...">
+<button onclick="siteSearch()">🔍</button>
+</div>
 
-      <span>
-        Sarkari <b>Career India</b>
-      </span>
+<div class="socials">
+<a href="#">f</a>
+<a href="#">✈</a>
+<a href="#">☘</a>
+<a href="#">◎</a>
+</div>
 
-    </div>
-
-
-    <div class="search">
-
-      <input
-        type="text"
-        placeholder="Search Government Exams..."
-      >
-
-      <button>🔍</button>
-
-    </div>
-
-
-    <button
-      class="hamburger"
-      onclick="toggleMenu()"
-    >
-      ☰
-    </button>
-
-  </div>
-
-
-  <nav id="navMenu">
-
-    <a href="index.html">⌂ Home</a>
-
-    <a href="jobs.html">💼 Latest Jobs</a>
-
-    <a href="results.html">🏆 Results</a>
-
-    <a href="admit-card.html">📨 Admit Card</a>
-
-    <a href="answer-key.html">🔑 Answer Key</a>
-
-    <a href="syllabus.html">📖 Syllabus</a>
-
-    <a href="scholarship.html">🎓 Scholarship</a>
-
-    <a href="bihar-jobs.html">📍 Bihar Jobs</a>
-
-    <a href="central-jobs.html">🏛 Central Jobs</a>
-
-    <a href="contact.html">☎ Contact</a>
-
-  </nav>
+<button class="hamburger" onclick="toggleMenu()">☰</button>
 
 </div>
 
+<nav id="navMenu">
+<a href="index.html">⌂ Home</a>
+<a href="jobs.html">💼 Latest Jobs</a>
+<a href="results.html">🏆 Results</a>
+<a href="admit-card.html">📨 Admit Card</a>
+<a href="answer-key.html">🔑 Answer Key</a>
+<a href="syllabus.html">📖 Syllabus</a>
+<a href="scholarship.html">🎓 Scholarship</a>
+<a href="bihar-jobs.html">📍 Bihar Jobs</a>
+<a href="central-jobs.html">🏛 Central Jobs</a>
+<a href="exams.html">📝 Exams</a>
+<a href="contact.html">☎ Contact</a>
+</nav>
 
-<!-- ================= MAIN ================= -->
+</div>
 
-<main class="exams-page">
+<main class="exam-page">
 
+<a href="index.html" class="back">← Back to Home</a>
 
-  <a
-    href="index.html"
-    class="back-btn"
-  >
-    ← Back to Home
-  </a>
+<section class="exam-heading">
+<h1>📝 Government Exams</h1>
+<p>Latest Government Exams, Exam Dates, Notifications & Updates</p>
+</section>
 
+<div class="notice">
+⚠️ <strong>Important:</strong>
+Exam dates, eligibility and application schedules can change.
+Always verify details from the official examination authority.
+</div>
 
-  <!-- HEADING -->
+<section class="exam-filters">
 
-  <section class="exams-heading">
+<h3>🔎 Search & Filter Exams</h3>
 
-    <h1>
-      📝 Government Exams
-    </h1>
+<div class="filter-row">
 
-    <p>
-      Popular Government Exams, Exam Pattern,
-      Syllabus & Important Information
-    </p>
+<input
+type="text"
+id="examSearch"
+placeholder="Search exams..."
+onkeyup="filterExams()"
+>
 
-  </section>
+<select id="categoryFilter" onchange="filterExams()">
 
+<option value="all">All Exams</option>
+<option value="bpsc">BPSC</option>
+<option value="upsc">UPSC</option>
+<option value="ssc">SSC</option>
+<option value="railway">Railway</option>
+<option value="banking">Banking</option>
 
-  <!-- UPSC -->
+</select>
 
-  <article class="exam-card">
+</div>
+</section>
 
-    <div class="exam-title">
-      🏛 UPSC Civil Services Examination
-    </div>
+<article class="exam-card" data-category="bpsc">
 
-    <div class="exam-info">
+<div class="exam-title">📍 BPSC Examination</div>
 
-      <p>
-        <strong>Conducting Body:</strong>
-        Union Public Service Commission
-      </p>
+<div class="exam-info">
 
-      <p>
-        <strong>Level:</strong>
-        Central Government
-      </p>
+<span class="badge">Bihar Examination</span>
 
-      <p>
-        <strong>Stages:</strong>
-        Preliminary, Main Examination & Interview
-      </p>
+<p><strong>📌 Exam:</strong> Bihar Public Service Commission Examinations</p>
+<p><strong>🎓 Qualification:</strong> Depends on examination</p>
+<p><strong>📅 Exam Date:</strong> Check Official Notification</p>
+<p><strong>📝 Selection:</strong> As per examination rules</p>
+<p><strong>📢 Status:</strong> Check Official Website</p>
 
-      <ul class="exam-list">
-        <li>General Studies</li>
-        <li>Current Affairs</li>
-        <li>Indian Polity</li>
-        <li>History & Geography</li>
-        <li>Economy</li>
-        <li>Environment & Ecology</li>
-        <li>Science & Technology</li>
-        <li>CSAT</li>
-      </ul>
+<div class="buttons">
+<a href="https://bpsc.bihar.gov.in/" target="_blank" class="official">
+🌐 Official Website
+</a>
+</div>
 
-      <div class="exam-buttons">
+</div>
+</article>
 
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
+<article class="exam-card" data-category="upsc">
 
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
+<div class="exam-title">🏛 UPSC Civil Services Examination</div>
 
-      </div>
+<div class="exam-info">
 
-    </div>
+<span class="badge">Central Examination</span>
 
-  </article>
+<p><strong>📌 Exam:</strong> UPSC Civil Services Examination</p>
+<p><strong>🎓 Qualification:</strong> Graduation as per notification</p>
+<p><strong>📅 Exam Date:</strong> Check Official Calendar</p>
+<p><strong>📝 Selection:</strong> Preliminary / Main / Interview</p>
+<p><strong>📢 Status:</strong> Check Official Website</p>
 
+<div class="buttons">
+<a href="https://upsc.gov.in/" target="_blank" class="official">
+🌐 UPSC Official Website
+</a>
+</div>
 
-  <!-- BPSC -->
+</div>
+</article>
 
-  <article class="exam-card">
+<article class="exam-card" data-category="ssc">
 
-    <div class="exam-title">
-      📍 BPSC
-    </div>
+<div class="exam-title">📚 SSC Examinations</div>
 
-    <div class="exam-info">
+<div class="exam-info">
 
-      <p>
-        <strong>Conducting Body:</strong>
-        Bihar Public Service Commission
-      </p>
-
-      <p>
-        <strong>Level:</strong>
-        Bihar State Government
-      </p>
+<span class="badge">Central Examination</span>
 
-      <p>
-        <strong>Stages:</strong>
-        Preliminary, Main Examination & Interview
-      </p>
+<p><strong>📌 Exam:</strong> SSC CGL / CHSL / MTS & Other Exams</p>
+<p><strong>🎓 Qualification:</strong> Depends on examination</p>
+<p><strong>📅 Exam Date:</strong> Check Official Calendar</p>
+<p><strong>📝 Selection:</strong> Exam-specific</p>
+<p><strong>📢 Status:</strong> Check Official Website</p>
 
-      <ul class="exam-list">
-        <li>General Studies</li>
-        <li>History</li>
-        <li>Geography</li>
-        <li>Indian Polity</li>
-        <li>Economy</li>
-        <li>General Science</li>
-        <li>Current Affairs</li>
-        <li>Bihar-specific topics</li>
-      </ul>
+<div class="buttons">
+<a href="https://ssc.gov.in/" target="_blank" class="official">
+🌐 SSC Official Website
+</a>
+</div>
 
-      <div class="exam-buttons">
+</div>
+</article>
 
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- SSC -->
-
-  <article class="exam-card">
-
-    <div class="exam-title">
-      📝 SSC Exams
-    </div>
+<article class="exam-card" data-category="railway">
 
-    <div class="exam-info">
+<div class="exam-title">🚆 Railway Examinations</div>
 
-      <p>
-        <strong>Conducting Body:</strong>
-        Staff Selection Commission
-      </p>
+<div class="exam-info">
 
-      <p>
-        <strong>Level:</strong>
-        Central Government
-      </p>
+<span class="badge">Railway Examination</span>
 
-      <p>
-        <strong>Examples:</strong>
-        SSC CGL, CHSL and other SSC examinations
-      </p>
+<p><strong>📌 Exam:</strong> RRB Various Examinations</p>
+<p><strong>🎓 Qualification:</strong> 10th / 12th / Diploma / Graduation as applicable</p>
+<p><strong>📅 Exam Date:</strong> Check Official Notification</p>
+<p><strong>📝 Selection:</strong> Exam-specific</p>
+<p><strong>📢 Status:</strong> Check Official Website</p>
 
-      <ul class="exam-list">
-        <li>General Intelligence & Reasoning</li>
-        <li>Quantitative Aptitude</li>
-        <li>English Language</li>
-        <li>General Awareness</li>
-        <li>Computer Knowledge where applicable</li>
-      </ul>
+<div class="buttons">
+<a href="https://www.rrbapply.gov.in/" target="_blank" class="official">
+🌐 Railway Official Portal
+</a>
+</div>
 
-      <div class="exam-buttons">
+</div>
+</article>
 
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
+<article class="exam-card" data-category="banking">
 
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
+<div class="exam-title">🏦 Banking Examinations</div>
 
-      </div>
+<div class="exam-info">
 
-    </div>
+<span class="badge">Banking Examination</span>
 
-  </article>
+<p><strong>📌 Exam:</strong> IBPS PO / Clerk & Other Banking Exams</p>
+<p><strong>🎓 Qualification:</strong> Usually Graduation for many exams</p>
+<p><strong>📅 Exam Date:</strong> Check Official Calendar</p>
+<p><strong>📝 Selection:</strong> Exam-specific</p>
+<p><strong>📢 Status:</strong> Check Official Website</p>
 
+<div class="buttons">
+<a href="https://www.ibps.in/" target="_blank" class="official">
+🌐 IBPS Official Website
+</a>
+</div>
 
-  <!-- RAILWAY -->
+</div>
+</article>
 
-  <article class="exam-card">
+<div id="noResult" class="no-result">
+<h3>😔 No Exam Found</h3>
+<p>Please try another keyword or category.</p>
+</div>
 
-    <div class="exam-title">
-      🚆 Railway Exams
-    </div>
+<section class="info-box">
 
-    <div class="exam-info">
+<h2>📌 Important Information</h2>
 
-      <p>
-        <strong>Conducting Body:</strong>
-        Railway Recruitment Boards
-      </p>
+<p>
+Government examination dates, eligibility, syllabus,
+application fees and selection procedures may differ
+from one examination to another.
+</p>
 
-      <p>
-        <strong>Level:</strong>
-        Central Government
-      </p>
+<ul>
+<li>Read the official notification carefully.</li>
+<li>Check examination dates before applying.</li>
+<li>Verify eligibility requirements.</li>
+<li>Use only official examination websites.</li>
+<li>Keep your application details safe.</li>
+</ul>
 
-      <ul class="exam-list">
-        <li>Mathematics</li>
-        <li>General Intelligence & Reasoning</li>
-        <li>General Awareness</li>
-        <li>General Science</li>
-        <li>Current Affairs</li>
-      </ul>
-
-      <div class="exam-buttons">
-
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- BANKING -->
-
-  <article class="exam-card">
-
-    <div class="exam-title">
-      🏦 Banking Exams
-    </div>
-
-    <div class="exam-info">
-
-      <p>
-        <strong>Level:</strong>
-        Banking Recruitment
-      </p>
-
-      <ul class="exam-list">
-        <li>Reasoning Ability</li>
-        <li>Quantitative Aptitude</li>
-        <li>English Language</li>
-        <li>General Awareness</li>
-        <li>Banking Awareness</li>
-      </ul>
-
-      <div class="exam-buttons">
-
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- POLICE -->
-
-  <article class="exam-card">
-
-    <div class="exam-title">
-      👮 Police Exams
-    </div>
-
-    <div class="exam-info">
-
-      <p>
-        <strong>Level:</strong>
-        State & Central Police Recruitment
-      </p>
-
-      <ul class="exam-list">
-        <li>General Knowledge</li>
-        <li>Current Affairs</li>
-        <li>Reasoning</li>
-        <li>Numerical Ability</li>
-        <li>General Science</li>
-        <li>State-specific topics where applicable</li>
-      </ul>
-
-      <div class="exam-buttons">
-
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- TEACHING -->
-
-  <article class="exam-card">
-
-    <div class="exam-title">
-      📚 Teaching Exams
-    </div>
-
-    <div class="exam-info">
-
-      <p>
-        <strong>Category:</strong>
-        Teaching Recruitment & Eligibility Exams
-      </p>
-
-      <ul class="exam-list">
-        <li>Child Development & Pedagogy</li>
-        <li>Language</li>
-        <li>Mathematics</li>
-        <li>Environmental Studies</li>
-        <li>Subject-specific topics</li>
-      </ul>
-
-      <div class="exam-buttons">
-
-        <a
-          href="syllabus.html"
-          class="syllabus-btn"
-        >
-          📖 View Syllabus
-        </a>
-
-        <a
-          href="#"
-          class="notification-btn"
-        >
-          📄 Official Notification
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
-
-
-  <!-- IMPORTANT -->
-
-  <section class="info-box">
-
-    <h2>
-      📌 Important Information
-    </h2>
-
-    <p>
-      Exam pattern, syllabus, eligibility and dates
-      may vary according to the examination and
-      recruitment year. Always verify the latest
-      details from the official examination authority.
-    </p>
-
-  </section>
-
+</section>
 
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
-  <div>
+<div>
+<span class="footer-logo">SCI</span>
+<strong>Sarkari Career <span>India</span></strong>
+<small>Government Jobs & Career Information</small>
+</div>
 
-    <span class="footer-logo">
-      SCI
-    </span>
-
-    <strong>
-      Sarkari Career <span>India</span>
-    </strong>
-
-    <small>
-      Government Jobs & Career Information
-    </small>
-
-  </div>
-
-
-  <div>
-
-    <strong>
-      Quick Links
-    </strong>
-
-    <br>
-
-    <a href="index.html">
-      Home
-    </a>
-
-    |
-
-    <a href="jobs.html">
-      Latest Jobs
-    </a>
-
-    |
-
-    <a href="results.html">
-      Results
-    </a>
-
-  </div>
-
-
-  <div>
-
-    <strong>
-      Exams
-    </strong>
-
-    <br>
-
-    <a href="exams.html">
-      Government Exams
-    </a>
-
-  </div>
+<div>
+<strong>Quick Links</strong><br>
+<a href="index.html">Home</a> |
+<a href="jobs.html">Latest Jobs</a> |
+<a href="results.html">Results</a> |
+<a href="contact.html">Contact</a>
+</div>
 
 </footer>
 
-
 <script>
 
-function toggleMenu() {
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("open");
+}
 
-  document
-    .getElementById("navMenu")
-    .classList
-    .toggle("open");
+function filterExams(){
 
+let search=document.getElementById("examSearch").value.toLowerCase().trim();
+let category=document.getElementById("categoryFilter").value;
+let cards=document.querySelectorAll(".exam-card");
+let visible=0;
+
+cards.forEach(function(card){
+
+let text=card.innerText.toLowerCase();
+let cardCategory=card.getAttribute("data-category");
+
+if(text.includes(search) &&
+(category==="all" || cardCategory===category)){
+card.style.display="block";
+visible++;
+}else{
+card.style.display="none";
+}
+
+});
+
+document.getElementById("noResult").style.display=
+visible===0 ? "block" : "none";
+}
+
+function siteSearch(){
+
+let query=document.getElementById("siteSearch").value.trim();
+
+if(query===""){
+alert("Please enter an exam name to search.");
+return;
+}
+
+document.getElementById("examSearch").value=query;
+filterExams();
+
+document.querySelector(".exam-filters").scrollIntoView({
+behavior:"smooth"
+});
 }
 
 </script>
-
 
 </body>
 </html>
