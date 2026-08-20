@@ -1,12 +1,390 @@
-      <nav id="navMenu">
-  <a href="index.html">⌂ Home</a>
-  <a href="jobs.html">▣ Latest Jobs</a>
-  <a href="results.html">🏆 Results</a>
-  <a href="admit-card.html">🪪 Admit Card</a>
-  <a href="answer-key.html">🔑 Answer Key</a>
-  <a href="syllabus.html">📖 Syllabus</a>
-  <a href="#">🎓 Scholarship</a>
-  <a href="category.html?type=bihar">📍 Bihar Jobs</a>
-  <a href="category.html?type=central">🏛 Central Jobs</a>
-  <a href="#contact">☎ Contact</a>
-      </nav>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarkari Career India</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+
+  <div class="brand">
+    <div class="logo-circle">
+      <div class="logo-main">SCI</div>
+      <div class="logo-small">Sarkari Career India</div>
+    </div>
+
+    <div>
+      <h1>Sarkari <span>Career</span> <b>India</b></h1>
+      <p>Government Jobs • Results • Exams • Career</p>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <div class="tricolor"></div>
+    <div class="person">👨‍🎓</div>
+  </div>
+
+</header>
+
+
+<!-- MAIN NAVIGATION -->
+<div class="nav-wrap">
+
+  <div class="nav-main">
+
+    <div class="mini-brand">
+      <strong>SCI</strong>
+      <span>Sarkari <b>Career India</b></span>
+    </div>
+
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search Government Jobs...">
+      <button onclick="searchSite()">🔍</button>
+    </div>
+
+    <div class="socials">
+      <a href="#" title="Facebook">f</a>
+      <a href="#" title="Telegram">✈</a>
+      <a href="#" title="WhatsApp">☘</a>
+      <a href="#" title="Instagram">◎</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+  </div>
+
+
+  <nav id="navMenu">
+
+    <a href="index.html">⌂ Home</a>
+
+    <a href="jobs.html">▣ Latest Jobs</a>
+
+    <a href="results.html">🏆 Results</a>
+
+    <a href="admit-card.html">📨 Admit Card</a>
+
+    <a href="answer-key.html">🔑 Answer Key</a>
+
+    <a href="syllabus.html">📖 Syllabus</a>
+
+    <a href="#">🎓 Scholarship</a>
+
+    <a href="category.html?type=bihar">📍 Bihar Jobs</a>
+
+    <a href="category.html?type=central">🏛 Central Jobs</a>
+
+    <a href="#contact">☎ Contact</a>
+
+  </nav>
+
+</div>
+
+
+<main>
+
+<!-- WELCOME SECTION -->
+<section class="welcome">
+
+  <div class="welcome-copy">
+
+    <h2>
+      Welcome to
+      <span>Sarkari Career</span>
+      <em>India</em>
+    </h2>
+
+    <h3>Your trusted source for Government Jobs & Exams</h3>
+
+    <div class="ticks">
+      <span>✓ Latest Jobs</span>
+      <span>✓ Exam Results</span>
+      <span>✓ Admit Cards</span>
+      <span>✓ Answer Keys</span>
+    </div>
+
+    <p class="quote">
+      "Your Career, Our Mission!"
+    </p>
+
+    <button class="green-btn" onclick="location.href='jobs.html'">
+      Explore Latest Jobs →
+    </button>
+
+  </div>
+
+  <div class="welcome-art">
+
+    <div class="wheel">☸</div>
+
+    <div class="future-note">
+      Build Your Future ✨
+    </div>
+
+    <div class="books">
+      📚
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- QUICK LINKS -->
+<section class="quick-grid">
+
+  <a href="jobs.html">
+    💼
+    <span>Latest Jobs</span>
+  </a>
+
+  <a href="results.html">
+    🏆
+    <span>Results</span>
+  </a>
+
+  <a href="admit-card.html">
+    📨
+    <span>Admit Card</span>
+  </a>
+
+  <a href="answer-key.html">
+    🔑
+    <span>Answer Key</span>
+  </a>
+
+  <a href="syllabus.html">
+    📖
+    <span>Syllabus</span>
+  </a>
+
+  <a href="category.html?type=bihar">
+    📍
+    <span>Bihar Jobs</span>
+  </a>
+
+  <a href="category.html?type=central">
+    🏛
+    <span>Central Jobs</span>
+  </a>
+
+  <a href="#">
+    🎓
+    <span>Scholarship</span>
+  </a>
+
+  <a href="#">
+    📝
+    <span>Exams</span>
+  </a>
+
+  <a href="#contact">
+    ☎
+    <span>Contact</span>
+  </a>
+
+</section>
+
+
+<!-- CONTENT -->
+<section class="content-grid">
+
+
+  <!-- LATEST UPDATES -->
+  <div class="panel updates">
+
+    <div class="panel-title red">
+      🔥 Latest Updates
+      <a href="jobs.html">View All →</a>
+    </div>
+
+    <article>
+      <time>NEW</time>
+      <div>
+        <strong>Latest Government Job Notifications</strong>
+        <p>Check latest vacancies and application dates.</p>
+      </div>
+      <span class="new">NEW</span>
+    </article>
+
+    <article>
+      <time>JOB</time>
+      <div>
+        <strong>Government Recruitment Updates</strong>
+        <p>Stay updated with new recruitment notifications.</p>
+      </div>
+      <span class="new">NEW</span>
+    </article>
+
+    <article>
+      <time>EXAM</time>
+      <div>
+        <strong>Upcoming Government Exams</strong>
+        <p>Check exam dates and important information.</p>
+      </div>
+    </article>
+
+    <article>
+      <time>RES</time>
+      <div>
+        <strong>Latest Exam Results</strong>
+        <p>Check recently declared examination results.</p>
+      </div>
+    </article>
+
+    <article>
+      <time>KEY</time>
+      <div>
+        <strong>Latest Answer Keys</strong>
+        <p>Download answer keys of government exams.</p>
+      </div>
+    </article>
+
+  </div>
+
+
+  <!-- CATEGORIES -->
+  <div class="panel categories">
+
+    <div class="panel-title blue">
+      📂 Job Categories
+    </div>
+
+    <a href="category.html?type=bihar">📍 Bihar Government Jobs</a>
+
+    <a href="category.html?type=central">🏛 Central Government Jobs</a>
+
+    <a href="#">👮 Police Jobs</a>
+
+    <a href="#">🚆 Railway Jobs</a>
+
+    <a href="#">🏦 Banking Jobs</a>
+
+    <a href="#">📚 Teaching Jobs</a>
+
+    <a href="#">💻 Computer Jobs</a>
+
+    <a href="#">🩺 Health Jobs</a>
+
+    <a href="#">⚖️ Other Government Jobs</a>
+
+  </div>
+
+
+  <!-- COMMUNITY -->
+  <div class="panel community">
+
+    <div class="panel-title pink">
+      👥 Join Our Community
+    </div>
+
+    <p>
+      Get latest job notifications directly on your phone.
+    </p>
+
+    <a class="wa" href="#">
+      ☘ WhatsApp Channel
+    </a>
+
+    <a class="tg" href="#">
+      ✈ Telegram Channel
+    </a>
+
+    <a class="yt" href="#">
+      ▶ YouTube
+    </a>
+
+    <a class="ig" href="#">
+      ◎ Instagram
+    </a>
+
+    <div class="pale">
+      <strong>Why Follow Us?</strong>
+    </div>
+
+    <ul>
+      <li>Daily Job Updates</li>
+      <li>Exam Notifications</li>
+      <li>Results & Admit Cards</li>
+      <li>Free Career Information</li>
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- EXAM SECTION -->
+<section class="panel exam-strip">
+
+  <h3>🎯 Popular Government Exams</h3>
+
+  <span>UPSC</span>
+  <span>BPSC</span>
+  <span>SSC</span>
+  <span>Railway</span>
+  <span>Banking</span>
+  <span>Police</span>
+  <span>Teaching</span>
+  <span>Defence</span>
+  <span>State PSC</span>
+  <span>Other Exams</span>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+<footer id="contact">
+
+  <div>
+    <span class="footer-logo">SCI</span>
+    <strong>Sarkari Career <span>India</span></strong>
+    <small>Government Jobs & Career Information</small>
+  </div>
+
+  <div>
+    <strong>Quick Links</strong>
+    <br>
+    Home | Latest Jobs | Results | Admit Card
+  </div>
+
+  <div>
+    <strong>Contact</strong>
+    <br>
+    Email: contact@sarkaricareerindia.com
+  </div>
+
+</footer>
+
+
+<!-- SEARCH SCRIPT -->
+<script>
+
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("open");
+}
+
+function searchSite() {
+
+  let query = document.getElementById("searchInput").value.trim();
+
+  if (query === "") {
+    alert("Please enter something to search.");
+    return;
+  }
+
+  alert("Searching for: " + query);
+}
+
+</script>
+
+</body>
+      </html>
