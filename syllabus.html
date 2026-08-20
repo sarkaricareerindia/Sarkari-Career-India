@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Government Exam Syllabus - Sarkari Career India</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <link rel="stylesheet" href="style.css">
+  <title>
+    Government Exam Syllabus - Sarkari Career India
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 
   <style>
+
     .syllabus-page {
       width: min(100%, 1200px);
       margin: auto;
@@ -87,6 +99,7 @@
       color: white;
       font-weight: bold;
       font-size: 13px;
+      text-decoration: none;
     }
 
     .download-btn {
@@ -105,9 +118,35 @@
       border-radius: 20px;
       font-weight: bold;
       margin-bottom: 15px;
+      text-decoration: none;
+    }
+
+    .search-message {
+      display: none;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .important-info {
+      background: white;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px #0001;
+    }
+
+    .important-info h2 {
+      color: #073a83;
+      margin-top: 0;
     }
 
     @media(max-width:600px) {
+
       .syllabus-page {
         padding: 10px;
       }
@@ -115,65 +154,135 @@
       .syllabus-heading h1 {
         font-size: 23px;
       }
+
+      .syllabus-title {
+        font-size: 16px;
+      }
+
     }
+
   </style>
+
 </head>
 
+
 <body>
+
+
+<!-- ================= NAVIGATION ================= -->
 
 <div class="nav-wrap">
 
   <div class="nav-main">
 
     <div class="mini-brand">
-      <strong>SCI</strong>
-      <span>Sarkari <b>Career India</b></span>
+
+      <strong>
+        SCI
+      </strong>
+
+      <span>
+        Sarkari <b>Career India</b>
+      </span>
+
     </div>
+
 
     <div class="search">
-      <input type="text" placeholder="Search Syllabus...">
-      <button>🔍</button>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Syllabus..."
+      >
+
+      <button onclick="searchSyllabus()">
+        🔍
+      </button>
+
     </div>
 
-    <button class="hamburger" onclick="toggleMenu()">☰</button>
+
+    <button
+      class="hamburger"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
 
   </div>
 
+
   <nav id="navMenu">
 
-    <a href="index.html">⌂ Home</a>
+    <a href="index.html">
+      ⌂ Home
+    </a>
 
-    <a href="jobs.html">💼 Latest Jobs</a>
+    <a href="jobs.html">
+      💼 Latest Jobs
+    </a>
 
-    <a href="results.html">🏆 Results</a>
+    <a href="results.html">
+      🏆 Results
+    </a>
 
-    <a href="admit-card.html">📨 Admit Card</a>
+    <a href="admit-card.html">
+      📨 Admit Card
+    </a>
 
-    <a href="answer-key.html">🔑 Answer Key</a>
+    <a href="answer-key.html">
+      🔑 Answer Key
+    </a>
 
-    <a href="syllabus.html">📖 Syllabus</a>
+    <a href="syllabus.html">
+      📖 Syllabus
+    </a>
 
-    <a href="category.html?type=bihar">📍 Bihar Jobs</a>
+    <a href="scholarship.html">
+      🎓 Scholarship
+    </a>
 
-    <a href="category.html?type=central">🏛 Central Jobs</a>
+    <a href="bihar-jobs.html">
+      📍 Bihar Jobs
+    </a>
 
-    <a href="index.html#contact">☎ Contact</a>
+    <a href="central-jobs.html">
+      🏛 Central Jobs
+    </a>
+
+    <a href="exams.html">
+      📝 Exams
+    </a>
+
+    <a href="contact.html">
+      ☎ Contact
+    </a>
 
   </nav>
 
 </div>
 
 
+
+<!-- ================= MAIN ================= -->
+
 <main class="syllabus-page">
 
-  <a class="back-btn" href="index.html">
+
+  <a
+    class="back-btn"
+    href="index.html"
+  >
     ← Back to Home
   </a>
 
 
   <section class="syllabus-heading">
 
-    <h1>📖 Government Exam Syllabus</h1>
+    <h1>
+      📖 Government Exam Syllabus
+    </h1>
 
     <p>
       Exam-wise Syllabus, Subjects & Important Topics
@@ -182,9 +291,20 @@
   </section>
 
 
-  <!-- UPSC -->
+  <div
+    id="searchMessage"
+    class="search-message"
+  >
+  </div>
 
-  <article class="syllabus-card">
+
+
+  <!-- ================= UPSC ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="upsc civil services general studies current affairs polity history geography economy environment science csat"
+  >
 
     <div class="syllabus-title">
       🏛 UPSC Civil Services
@@ -203,6 +323,7 @@
       </p>
 
       <ul class="subject-list">
+
         <li>General Studies</li>
         <li>Current Affairs</li>
         <li>Indian Polity</li>
@@ -211,15 +332,23 @@
         <li>Environment & Ecology</li>
         <li>Science & Technology</li>
         <li>CSAT</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -230,9 +359,13 @@
   </article>
 
 
-  <!-- BPSC -->
 
-  <article class="syllabus-card">
+  <!-- ================= BPSC ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="bpsc bihar public service commission general studies history geography polity economy science current affairs bihar"
+  >
 
     <div class="syllabus-title">
       📍 BPSC
@@ -250,6 +383,7 @@
       </p>
 
       <ul class="subject-list">
+
         <li>General Studies</li>
         <li>History</li>
         <li>Geography</li>
@@ -258,15 +392,23 @@
         <li>General Science</li>
         <li>Current Affairs</li>
         <li>Bihar-specific topics</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -277,9 +419,13 @@
   </article>
 
 
-  <!-- SSC -->
 
-  <article class="syllabus-card">
+  <!-- ================= SSC ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="ssc staff selection commission reasoning quantitative aptitude english general awareness computer"
+  >
 
     <div class="syllabus-title">
       📝 SSC
@@ -293,20 +439,29 @@
       </p>
 
       <ul class="subject-list">
+
         <li>General Intelligence & Reasoning</li>
         <li>Quantitative Aptitude</li>
         <li>English Language</li>
         <li>General Awareness</li>
         <li>Computer Knowledge where applicable</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -317,9 +472,13 @@
   </article>
 
 
-  <!-- RAILWAY -->
 
-  <article class="syllabus-card">
+  <!-- ================= RAILWAY ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="railway railway exams mathematics reasoning general awareness science current affairs"
+  >
 
     <div class="syllabus-title">
       🚆 Railway Exams
@@ -333,20 +492,29 @@
       </p>
 
       <ul class="subject-list">
+
         <li>Mathematics</li>
         <li>General Intelligence & Reasoning</li>
         <li>General Awareness</li>
         <li>General Science</li>
         <li>Current Affairs</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -357,9 +525,13 @@
   </article>
 
 
-  <!-- BANKING -->
 
-  <article class="syllabus-card">
+  <!-- ================= BANKING ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="banking bank reasoning quantitative aptitude english general awareness banking awareness computer"
+  >
 
     <div class="syllabus-title">
       🏦 Banking Exams
@@ -373,21 +545,30 @@
       </p>
 
       <ul class="subject-list">
+
         <li>Reasoning Ability</li>
         <li>Quantitative Aptitude</li>
         <li>English Language</li>
         <li>General Awareness</li>
         <li>Banking Awareness</li>
         <li>Computer Knowledge where applicable</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -398,9 +579,13 @@
   </article>
 
 
-  <!-- TEACHING -->
 
-  <article class="syllabus-card">
+  <!-- ================= TEACHING ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="teaching teacher eligibility recruitment child development pedagogy language mathematics environmental studies"
+  >
 
     <div class="syllabus-title">
       📚 Teaching Exams
@@ -414,20 +599,29 @@
       </p>
 
       <ul class="subject-list">
+
         <li>Child Development & Pedagogy</li>
         <li>Language</li>
         <li>Mathematics</li>
         <li>Environmental Studies</li>
         <li>Subject-specific topics</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -438,9 +632,13 @@
   </article>
 
 
-  <!-- POLICE -->
 
-  <article class="syllabus-card">
+  <!-- ================= POLICE ================= -->
+
+  <article
+    class="syllabus-card"
+    data-search="police police recruitment general knowledge current affairs reasoning numerical ability science state"
+  >
 
     <div class="syllabus-title">
       👮 Police Exams
@@ -454,21 +652,30 @@
       </p>
 
       <ul class="subject-list">
+
         <li>General Knowledge</li>
         <li>Current Affairs</li>
         <li>Reasoning</li>
         <li>Numerical Ability</li>
         <li>General Science</li>
         <li>State-specific General Knowledge</li>
+
       </ul>
+
 
       <div class="syllabus-buttons">
 
-        <a href="#" class="download-btn">
+        <a
+          href="#"
+          class="download-btn"
+        >
           📖 Download Syllabus
         </a>
 
-        <a href="#" class="notification-btn">
+        <a
+          href="#"
+          class="notification-btn"
+        >
           📄 Official Notification
         </a>
 
@@ -479,31 +686,44 @@
   </article>
 
 
-  <section class="panel" style="padding:15px; margin-top:15px;">
 
-    <h2 style="color:#073a83; margin-top:0;">
+  <!-- ================= IMPORTANT INFORMATION ================= -->
+
+  <section class="important-info">
+
+    <h2>
       📌 Important Information
     </h2>
 
     <p>
-      Syllabus can vary by examination and recruitment year.
-      Always verify the latest syllabus and exam pattern from the
-      official examination authority's notification.
+
+      Syllabus can vary by examination and recruitment
+      year. Always verify the latest syllabus and exam
+      pattern from the official examination authority's
+      notification.
+
     </p>
 
   </section>
 
+
 </main>
 
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
   <div>
 
-    <span class="footer-logo">SCI</span>
+    <span class="footer-logo">
+      SCI
+    </span>
 
     <strong>
-      Sarkari Career <span>India</span>
+      Sarkari Career
+      <span>India</span>
     </strong>
 
     <small>
@@ -515,32 +735,137 @@
 
   <div>
 
-    <strong>Quick Links</strong>
+    <strong>
+      Quick Links
+    </strong>
 
     <br>
 
-    <a href="index.html">Home</a> |
+    <a href="index.html">
+      Home
+    </a>
 
-    <a href="jobs.html">Latest Jobs</a> |
+    |
 
-    <a href="results.html">Results</a>
+    <a href="jobs.html">
+      Latest Jobs
+    </a>
+
+    |
+
+    <a href="results.html">
+      Results
+    </a>
+
+    |
+
+    <a href="contact.html">
+      Contact
+    </a>
 
   </div>
 
 </footer>
 
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
+
 
 function toggleMenu() {
 
   document
     .getElementById("navMenu")
-    .classList.toggle("open");
+    .classList
+    .toggle("open");
+
+}
+
+
+
+function searchSyllabus() {
+
+  let query =
+    document
+      .getElementById("searchInput")
+      .value
+      .trim()
+      .toLowerCase();
+
+
+  let cards =
+    document.querySelectorAll(
+      ".syllabus-card"
+    );
+
+
+  let message =
+    document.getElementById(
+      "searchMessage"
+    );
+
+
+  if (query === "") {
+
+    cards.forEach(function(card) {
+
+      card.style.display = "block";
+
+    });
+
+    message.style.display = "none";
+
+    return;
+
+  }
+
+
+  let found = false;
+
+
+  cards.forEach(function(card) {
+
+    let text =
+      card.innerText.toLowerCase();
+
+
+    if (text.includes(query)) {
+
+      card.style.display = "block";
+
+      found = true;
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  message.style.display = "block";
+
+
+  if (found) {
+
+    message.innerText =
+      "✅ Syllabus found.";
+
+  } else {
+
+    message.innerText =
+      "❌ No syllabus found for: " + query;
+
+  }
 
 }
 
 </script>
 
+
 </body>
-  </html>
+
+</html>
