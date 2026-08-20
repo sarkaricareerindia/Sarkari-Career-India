@@ -2,133 +2,273 @@
 <html lang="en">
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <title>Central Government Jobs - Sarkari Career India</title>
+<title>Central Government Jobs - Sarkari Career India</title>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <style>
+<style>
 
-    .category-page {
-      width: min(100%, 1200px);
-      margin: auto;
-      background: #f6f7fb;
-      padding: 15px;
-    }
+/* ================= PAGE ================= */
 
-    .category-heading {
-      background: #073a83;
-      color: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 18px;
-    }
+.category-page{
+  width:min(100%,1200px);
+  margin:auto;
+  background:#f6f7fb;
+  padding:20px 15px;
+}
 
-    .category-heading h1 {
-      margin: 0;
-      font-size: 28px;
-    }
+/* ================= HEADING ================= */
 
-    .category-heading p {
-      margin: 8px 0 0;
-    }
+.category-heading{
+  background:linear-gradient(135deg,#073a83,#0b4ea2);
+  color:white;
+  padding:25px 20px;
+  border-radius:12px;
+  margin-bottom:18px;
+}
 
-    .job-card {
-      background: white;
-      border: 1px solid #d9dee8;
-      border-radius: 12px;
-      margin-bottom: 16px;
-      overflow: hidden;
-      box-shadow: 0 2px 7px #0002;
-    }
+.category-heading h1{
+  margin:0;
+  font-size:28px;
+}
 
-    .job-title {
-      background: #073a83;
-      color: white;
-      padding: 14px 16px;
-      font-size: 18px;
-      font-weight: bold;
-    }
+.category-heading p{
+  margin:8px 0 0;
+  font-size:14px;
+}
 
-    .job-info {
-      padding: 16px;
-    }
+/* ================= BACK ================= */
 
-    .job-info p {
-      margin: 8px 0;
-      font-size: 14px;
-    }
+.back{
+  display:inline-block;
+  background:#ff7900;
+  color:white;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:20px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
 
-    .job-info strong {
-      color: #073a83;
-    }
+.back:hover{
+  background:#e56700;
+}
 
-    .buttons {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 14px;
-    }
+/* ================= NOTICE ================= */
 
-    .buttons a {
-      display: inline-block;
-      padding: 10px 15px;
-      border-radius: 7px;
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-    }
+.notice{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1e40af;
+  padding:14px;
+  border-radius:10px;
+  margin-bottom:18px;
+  font-size:13px;
+  line-height:1.6;
+}
 
-    .notification {
-      background: #073a83;
-    }
+/* ================= FILTER ================= */
 
-    .apply {
-      background: #10954e;
-    }
+.job-filters{
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #e1e5ec;
+  box-shadow:0 3px 10px #0001;
+  margin-bottom:18px;
+}
 
-    .back {
-      display: inline-block;
-      background: #ff7900;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+.job-filters h3{
+  color:#073a83;
+  margin:0 0 12px;
+  font-size:17px;
+}
 
-    .info-box {
-      background: white;
-      border-left: 5px solid #ff7900;
-      padding: 16px;
-      border-radius: 10px;
-      margin-top: 18px;
-      margin-bottom: 20px;
-    }
+.filter-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-    .info-box h2 {
-      color: #073a83;
-      margin-top: 0;
-    }
+.filter-row input,
+.filter-row select{
+  flex:1;
+  min-width:200px;
+  padding:11px;
+  border:1px solid #d5d9e0;
+  border-radius:7px;
+  font-size:14px;
+  outline:none;
+}
 
-    @media (max-width: 600px) {
+.filter-row input:focus,
+.filter-row select:focus{
+  border-color:#073a83;
+}
 
-      .category-page {
-        padding: 10px;
-      }
+/* ================= JOB CARD ================= */
 
-      .category-heading h1 {
-        font-size: 23px;
-      }
+.job-card{
+  background:white;
+  border:1px solid #d9dee8;
+  border-left:5px solid #073a83;
+  border-radius:12px;
+  margin-bottom:16px;
+  overflow:hidden;
+  box-shadow:0 2px 7px #0002;
+}
 
-    }
+.job-title{
+  background:#073a83;
+  color:white;
+  padding:14px 16px;
+  font-size:18px;
+  font-weight:bold;
+}
 
-  </style>
+.job-info{
+  padding:16px;
+}
+
+.badge{
+  display:inline-block;
+  background:#dbeafe;
+  color:#1e40af;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.job-info p{
+  margin:8px 0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.job-info strong{
+  color:#073a83;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.buttons a{
+  display:inline-block;
+  padding:10px 15px;
+  border-radius:7px;
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.notification{
+  background:#073a83;
+}
+
+.notification:hover{
+  background:#052d67;
+}
+
+.apply{
+  background:#10954e;
+}
+
+.apply:hover{
+  background:#087b3d;
+}
+
+/* ================= NO RESULT ================= */
+
+.no-result{
+  display:none;
+  background:white;
+  text-align:center;
+  padding:30px 15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  color:#666;
+  margin-bottom:18px;
+}
+
+.no-result h3{
+  color:#073a83;
+  margin-bottom:8px;
+}
+
+/* ================= INFO ================= */
+
+.info-box{
+  background:white;
+  border-left:5px solid #ff7900;
+  padding:18px;
+  border-radius:10px;
+  margin-top:20px;
+}
+
+.info-box h2{
+  color:#073a83;
+  margin-top:0;
+  font-size:19px;
+}
+
+.info-box p,
+.info-box li{
+  font-size:14px;
+  line-height:1.7;
+  color:#555;
+}
+
+.info-box ul{
+  padding-left:20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+  .category-page{
+    padding:12px 10px;
+  }
+
+  .category-heading{
+    padding:20px 15px;
+  }
+
+  .category-heading h1{
+    font-size:23px;
+  }
+
+  .filter-row{
+    flex-direction:column;
+  }
+
+  .filter-row input,
+  .filter-row select{
+    width:100%;
+    min-width:100%;
+  }
+
+  .job-title{
+    font-size:16px;
+  }
+
+}
+
+</style>
 
 </head>
 
@@ -136,88 +276,167 @@
 <body>
 
 
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+<div class="brand">
+
+<div class="logo-circle">
+
+<div class="logo-main">
+SCI
+</div>
+
+<div class="logo-small">
+Sarkari Career India
+</div>
+
+</div>
+
+
+<div>
+
+<h1>
+Sarkari
+<span>Career</span>
+<b>India</b>
+</h1>
+
+<p>
+Government Jobs • Results • Exams • Career
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hero-art">
+
+<div class="tricolor"></div>
+
+<div class="person">
+👨‍🎓
+</div>
+
+</div>
+
+</header>
+
+
 <!-- ================= NAVIGATION ================= -->
 
 <div class="nav-wrap">
 
-  <div class="nav-main">
+<div class="nav-main">
 
-    <div class="mini-brand">
+<div class="mini-brand">
 
-      <strong>SCI</strong>
+<strong>
+SCI
+</strong>
 
-      <span>
-        Sarkari <b>Career India</b>
-      </span>
+<span>
+Sarkari <b>Career India</b>
+</span>
 
-    </div>
-
-
-    <div class="search">
-
-      <input
-        type="text"
-        placeholder="Search Central Jobs..."
-      >
-
-      <button>🔍</button>
-
-    </div>
+</div>
 
 
-    <button
-      class="hamburger"
-      onclick="toggleMenu()"
-    >
-      ☰
-    </button>
+<div class="search">
 
-  </div>
+<input
+type="text"
+id="siteSearch"
+placeholder="Search Central Jobs..."
+>
+
+<button onclick="siteSearch()">
+🔍
+</button>
+
+</div>
 
 
-  <nav id="navMenu">
+<div class="socials">
 
-    <a href="index.html">
-      ⌂ Home
-    </a>
+<a href="#" title="Facebook">
+f
+</a>
 
-    <a href="jobs.html">
-      💼 Latest Jobs
-    </a>
+<a href="#" title="Telegram">
+✈
+</a>
 
-    <a href="results.html">
-      🏆 Results
-    </a>
+<a href="#" title="WhatsApp">
+☘
+</a>
 
-    <a href="admit-card.html">
-      📨 Admit Card
-    </a>
+<a href="#" title="Instagram">
+◎
+</a>
 
-    <a href="answer-key.html">
-      🔑 Answer Key
-    </a>
+</div>
 
-    <a href="syllabus.html">
-      📖 Syllabus
-    </a>
 
-    <a href="scholarship.html">
-      🎓 Scholarship
-    </a>
+<button
+class="hamburger"
+onclick="toggleMenu()"
+>
+☰
+</button>
 
-    <a href="bihar-jobs.html">
-      📍 Bihar Jobs
-    </a>
+</div>
 
-    <a href="central-jobs.html">
-      🏛 Central Jobs
-    </a>
 
-    <a href="contact.html">
-      ☎ Contact
-    </a>
+<nav id="navMenu">
 
-  </nav>
+<a href="index.html">
+⌂ Home
+</a>
+
+<a href="jobs.html">
+💼 Latest Jobs
+</a>
+
+<a href="results.html">
+🏆 Results
+</a>
+
+<a href="admit-card.html">
+📨 Admit Card
+</a>
+
+<a href="answer-key.html">
+🔑 Answer Key
+</a>
+
+<a href="syllabus.html">
+📖 Syllabus
+</a>
+
+<a href="scholarship.html">
+🎓 Scholarship
+</a>
+
+<a href="bihar-jobs.html">
+📍 Bihar Jobs
+</a>
+
+<a href="central-jobs.html">
+🏛 Central Jobs
+</a>
+
+<a href="exams.html">
+📝 Exams
+</a>
+
+<a href="contact.html">
+☎ Contact
+</a>
+
+</nav>
 
 </div>
 
@@ -227,167 +446,734 @@
 <main class="category-page">
 
 
-  <a
-    href="index.html"
-    class="back"
-  >
-    ← Back to Home
-  </a>
+<a
+href="index.html"
+class="back"
+>
+← Back to Home
+</a>
 
 
-  <!-- HEADING -->
+<section class="category-heading">
 
-  <section class="category-heading">
+<h1>
+🏛 Central Government Jobs
+</h1>
 
-    <h1>
-      🏛 Central Government Jobs
-    </h1>
+<p>
+Latest Central Government Job Notifications,
+Vacancies, Eligibility & Application Updates
+</p>
 
-    <p>
-      Latest Central Government Job Notifications,
-      Vacancies, Eligibility & Application Updates
-    </p>
-
-  </section>
+</section>
 
 
-  <!-- JOB 1 -->
+<!-- ================= NOTICE ================= -->
 
-  <article class="job-card">
+<div class="notice">
 
-    <div class="job-title">
-      🔥 Latest Central Government Recruitment
-    </div>
+⚠️ <strong>Important:</strong>
+Job details, vacancies, dates and eligibility can change.
+Apply only after checking the latest official notification
+on the concerned recruitment authority's website.
 
-
-    <div class="job-info">
-
-      <p>
-        <strong>Organization:</strong>
-        Central Government Department
-      </p>
-
-      <p>
-        <strong>Post Name:</strong>
-        Various Government Posts
-      </p>
-
-      <p>
-        <strong>Total Vacancies:</strong>
-        Check Official Notification
-      </p>
-
-      <p>
-        <strong>Qualification:</strong>
-        10th / 12th / Graduation as applicable
-      </p>
-
-      <p>
-        <strong>Age Limit:</strong>
-        Check Official Notification
-      </p>
-
-      <p>
-        <strong>Last Date:</strong>
-        To Be Updated
-      </p>
+</div>
 
 
-      <div class="buttons">
+<!-- ================= FILTER ================= -->
 
-        <a
-          href="#"
-          class="notification"
-        >
-          📄 Official Notification
-        </a>
+<section class="job-filters">
 
-        <a
-          href="#"
-          class="apply"
-        >
-          📝 Apply Online
-        </a>
-
-      </div>
-
-    </div>
-
-  </article>
+<h3>
+🔎 Search & Filter Central Jobs
+</h3>
 
 
-  <!-- JOB 2 -->
+<div class="filter-row">
 
-  <article class="job-card">
-
-    <div class="job-title">
-      🆕 New Central Job Update
-    </div>
-
-
-    <div class="job-info">
-
-      <p>
-        <strong>Organization:</strong>
-        Central Government Organization
-      </p>
-
-      <p>
-        <strong>Post Name:</strong>
-        Recruitment Posts
-      </p>
-
-      <p>
-        <strong>Total Vacancies:</strong>
-        Check Official Notification
-      </p>
-
-      <p>
-        <strong>Qualification:</strong>
-        Check Official Notification
-      </p>
-
-      <p>
-        <strong>Age Limit:</strong>
-        Check Official Notification
-      </p>
-
-      <p>
-        <strong>Last Date:</strong>
-        To Be Updated
-      </p>
+<input
+type="text"
+id="jobSearch"
+placeholder="Search jobs..."
+onkeyup="filterJobs()"
+>
 
 
-      <div class="buttons">
+<select
+id="categoryFilter"
+onchange="filterJobs()"
+>
 
-        <a
-          href="#"
-          class="notification"
-        >
-          📄 Official Notification
-        </a>
+<option value="all">
+All Jobs
+</option>
 
-        <a
-          href="#"
-          class="apply"
-        >
-          📝 Apply Online
-        </a>
+<option value="ssc">
+SSC
+</option>
 
-      </div>
+<option value="upsc">
+UPSC
+</option>
 
-    </div>
+<option value="railway">
+Railway
+</option>
 
-  </article>
+<option value="banking">
+Banking
+</option>
+
+<option value="defence">
+Defence
+</option>
+
+</select>
+
+</div>
+
+</section>
 
 
-  <!-- JOB 3 -->
+<!-- ================= JOB 1 ================= -->
 
-  <article class="job-card">
+<article
+class="job-card"
+data-category="ssc"
+>
 
-    <div class="job-title">
-      📢 Upcoming Central Government Recruitment
-    </div>
+<div class="job-title">
+🏛 SSC Recruitment
+</div>
 
 
-    <div class="
+<div class="job-info">
+
+<span class="badge">
+Central Government
+</span>
+
+
+<p>
+<strong>📌 Organization:</strong>
+Staff Selection Commission (SSC)
+</p>
+
+<p>
+<strong>💼 Post:</strong>
+Various SSC Posts
+</p>
+
+<p>
+<strong>👥 Vacancies:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>🎓 Qualification:</strong>
+Depends on the recruitment
+</p>
+
+<p>
+<strong>🎂 Age Limit:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>📅 Last Date:</strong>
+Check Official Notification
+</p>
+
+
+<div class="buttons">
+
+<a
+href="https://ssc.gov.in/"
+target="_blank"
+rel="noopener noreferrer"
+class="notification"
+>
+🌐 SSC Official Website
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ================= JOB 2 ================= -->
+
+<article
+class="job-card"
+data-category="upsc"
+>
+
+<div class="job-title">
+🏛 UPSC Recruitment
+</div>
+
+
+<div class="job-info">
+
+<span class="badge">
+Central Government
+</span>
+
+
+<p>
+<strong>📌 Organization:</strong>
+Union Public Service Commission (UPSC)
+</p>
+
+<p>
+<strong>💼 Post:</strong>
+Civil Services & Other UPSC Examinations
+</p>
+
+<p>
+<strong>👥 Vacancies:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>🎓 Qualification:</strong>
+Depends on the examination
+</p>
+
+<p>
+<strong>🎂 Age Limit:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>📅 Last Date:</strong>
+Check Official Notification
+</p>
+
+
+<div class="buttons">
+
+<a
+href="https://upsc.gov.in/"
+target="_blank"
+rel="noopener noreferrer"
+class="notification"
+>
+🌐 UPSC Official Website
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ================= JOB 3 ================= -->
+
+<article
+class="job-card"
+data-category="railway"
+>
+
+<div class="job-title">
+🚆 Railway Recruitment
+</div>
+
+
+<div class="job-info">
+
+<span class="badge">
+Central Government
+</span>
+
+
+<p>
+<strong>📌 Organization:</strong>
+Indian Railways / Railway Recruitment Boards
+</p>
+
+<p>
+<strong>💼 Post:</strong>
+Various Railway Posts
+</p>
+
+<p>
+<strong>👥 Vacancies:</strong>
+Check Current Official Notification
+</p>
+
+<p>
+<strong>🎓 Qualification:</strong>
+10th / 12th / Diploma / Graduation
+as applicable
+</p>
+
+<p>
+<strong>🎂 Age Limit:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>📅 Last Date:</strong>
+Check Official Notification
+</p>
+
+
+<div class="buttons">
+
+<a
+href="https://www.rrbapply.gov.in/"
+target="_blank"
+rel="noopener noreferrer"
+class="notification"
+>
+🌐 Railway Recruitment Portal
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ================= JOB 4 ================= -->
+
+<article
+class="job-card"
+data-category="banking"
+>
+
+<div class="job-title">
+🏦 Banking Recruitment
+</div>
+
+
+<div class="job-info">
+
+<span class="badge">
+Central / Banking
+</span>
+
+
+<p>
+<strong>📌 Organization:</strong>
+Government Banking Recruitment
+</p>
+
+<p>
+<strong>💼 Post:</strong>
+Clerk / PO / Specialist & Other Posts
+</p>
+
+<p>
+<strong>👥 Vacancies:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>🎓 Qualification:</strong>
+Usually Graduation for many posts
+</p>
+
+<p>
+<strong>🎂 Age Limit:</strong>
+Post-specific
+</p>
+
+<p>
+<strong>📅 Last Date:</strong>
+Check Official Notification
+</p>
+
+
+<div class="buttons">
+
+<a
+href="https://www.ibps.in/"
+target="_blank"
+rel="noopener noreferrer"
+class="notification"
+>
+🌐 IBPS Official Website
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ================= JOB 5 ================= -->
+
+<article
+class="job-card"
+data-category="defence"
+>
+
+<div class="job-title">
+🪖 Defence Recruitment
+</div>
+
+
+<div class="job-info">
+
+<span class="badge">
+Central Government
+</span>
+
+
+<p>
+<strong>📌 Organization:</strong>
+Government Defence Recruitment
+</p>
+
+<p>
+<strong>💼 Post:</strong>
+Various Defence Posts
+</p>
+
+<p>
+<strong>👥 Vacancies:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>🎓 Qualification:</strong>
+Depends on the recruitment
+</p>
+
+<p>
+<strong>🎂 Age Limit:</strong>
+Check Official Notification
+</p>
+
+<p>
+<strong>📅 Last Date:</strong>
+Check Official Notification
+</p>
+
+
+<div class="buttons">
+
+<a
+href="https://www.mod.gov.in/"
+target="_blank"
+rel="noopener noreferrer"
+class="notification"
+>
+🌐 Ministry of Defence
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ================= NO RESULT ================= -->
+
+<div
+id="noResult"
+class="no-result"
+>
+
+<h3>
+😔 No Job Found
+</h3>
+
+<p>
+Please try another keyword or category.
+</p>
+
+</div>
+
+
+<!-- ================= IMPORTANT ================= -->
+
+<section class="info-box">
+
+<h2>
+📌 Important Information
+</h2>
+
+
+<p>
+Central Government recruitment rules, vacancies,
+eligibility, application dates, fees and selection
+process can differ from one examination to another.
+Always read the latest official notification carefully.
+</p>
+
+
+<ul>
+
+<li>
+Check the official notification before applying.
+</li>
+
+<li>
+Verify application start and last dates.
+</li>
+
+<li>
+Check qualification and age requirements.
+</li>
+
+<li>
+Use only official recruitment websites.
+</li>
+
+<li>
+Never share OTP, password or banking PIN.
+</li>
+
+</ul>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+
+<div>
+
+<span class="footer-logo">
+SCI
+</span>
+
+<strong>
+Sarkari Career
+<span>India</span>
+</strong>
+
+<small>
+Government Jobs & Career Information
+</small>
+
+</div>
+
+
+<div>
+
+<strong>
+Quick Links
+</strong>
+
+<br>
+
+<a href="index.html">
+Home
+</a>
+
+|
+
+<a href="jobs.html">
+Latest Jobs
+</a>
+
+|
+
+<a href="results.html">
+Results
+</a>
+
+|
+
+<a href="admit-card.html">
+Admit Card
+</a>
+
+</div>
+
+
+<div>
+
+<strong>
+Categories
+</strong>
+
+<br>
+
+<a href="bihar-jobs.html">
+Bihar Jobs
+</a>
+
+|
+
+<a href="central-jobs.html">
+Central Jobs
+</a>
+
+</div>
+
+
+<div>
+
+<strong>
+Contact
+</strong>
+
+<br>
+
+<a href="contact.html">
+Contact Us
+</a>
+
+</div>
+
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+document
+.getElementById("navMenu")
+.classList
+.toggle("open");
+
+}
+
+
+/* JOB FILTER */
+
+function filterJobs(){
+
+let search =
+document
+.getElementById("jobSearch")
+.value
+.toLowerCase()
+.trim();
+
+
+let category =
+document
+.getElementById("categoryFilter")
+.value;
+
+
+let cards =
+document.querySelectorAll(
+".job-card"
+);
+
+
+let visible = 0;
+
+
+cards.forEach(function(card){
+
+let text =
+card.innerText.toLowerCase();
+
+
+let cardCategory =
+card.getAttribute(
+"data-category"
+);
+
+
+let searchMatch =
+text.includes(search);
+
+
+let categoryMatch =
+category === "all" ||
+cardCategory === category;
+
+
+if(
+searchMatch &&
+categoryMatch
+){
+
+card.style.display =
+"block";
+
+visible++;
+
+}
+
+else{
+
+card.style.display =
+"none";
+
+}
+
+});
+
+
+document
+.getElementById("noResult")
+.style.display =
+visible === 0
+? "block"
+: "none";
+
+}
+
+
+/* TOP SEARCH */
+
+function siteSearch(){
+
+let query =
+document
+.getElementById("siteSearch")
+.value
+.trim();
+
+
+if(query === ""){
+
+alert(
+"Please enter a job name to search."
+);
+
+return;
+
+}
+
+
+document
+.getElementById("jobSearch")
+.value =
+query;
+
+
+filterJobs();
+
+
+document
+.querySelector(".job-filters")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+
+</body>
+</html>
